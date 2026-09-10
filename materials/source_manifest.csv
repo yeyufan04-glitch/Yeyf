@@ -1,0 +1,8 @@
+source_id,title,issuer,url,local_path,license_or_use,status,notes
+SAFE-2023-01,银行外汇展业管理办法（试行）,国家外汇管理局,https://www.safe.gov.cn/safe/2023/1229/23744.html,regulations/SAFE_bank_fx_practice_trial.pdf,公开监管文件,downloaded,2024-01-01起施行的试行办法
+SAFE-E-DOC,货物贸易外汇收支电子单证审核问答,国家外汇管理局,https://www.safe.gov.cn/safe/file/file/20170725/149ad9a70d384f5a80cd495e9c16bd82.pdf,regulations/SAFE_goods_trade_e_document_QA.pdf,公开监管问答,downloaded,用于电子单证与展业三原则边界
+ICC-UCP600,UCP 600,ICC,https://library.iccwbo.org/content/tfb/RULES/tfb-ucp600-rules.htm,,版权归ICC；仅链接与摘要,reference_only,普通进口汇款不直接适用
+ICC-ISBP821,ISBP 821,ICC,https://library.iccwbo.org/content/tfb/RULES/tfb-isbp-2023-rules.htm,,版权归ICC；仅链接与摘要,reference_only,信用证项下审单实务
+UNVTD,UN/CEFACT Verifiable Trade Documents,UNECE,https://unvtd.unece.org/overview/,open-standards/unvtd/,CC BY 4.0,copied_subset,保留6类示例JSON与Schema
+DESIGN-0910,产品设计源稿,用户提供,,design/product_design_source.txt,用户提供材料,retained,仅作为本任务设计依据
+SYNTH-CASE-001,进口汇款合成案例,贸证贯通Demo,,../public/demo-data/,本任务生成,generated,全部主体单据和接口数据均为合成
