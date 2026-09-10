@@ -1,0 +1,598 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+title: Commercial Invoice
+description: >-
+  A commercial document which consists of an itemized account of goods or services delivered, together with a demand for
+  payment.
+type: object
+required:
+  - "@context"
+  - type
+  - credentialSchema
+  - issuer
+  - credentialSubject
+properties:
+  "@context":
+    type: string
+    format: uri
+    description: Linked Data context for semantic interoperability
+    const: https://unvtd.unece.org/commercial-invoice-context.json
+  type:
+    type: array
+    description: Credential types
+    items:
+      type: string
+      enum:
+        - VerifiableCredential
+        - CommercialInvoice
+    minItems: 2
+    maxItems: 2
+    example:
+      - VerifiableCredential
+      - CommercialInvoice
+  credentialSchema:
+    type: object
+    description: Reference to the credential schema for validation
+    properties:
+      id:
+        type: string
+        format: uri
+        const: https://unvtd.unece.org/commercial-invoice-schema.yaml
+        description: Public location of the schema
+      type:
+        type: string
+        const: JsonSchema
+        description: Schema type identifier
+    required:
+      - id
+      - type
+  id:
+    type: string
+    format: uri
+    description: ""
+    example: urn:uuid:e9bf65a3-9ff3-4988-8c44-2535b949279f
+  validFrom:
+    example: 2025-03-06:10:00
+    type: string
+    format: date-time
+    description: ""
+  validTo:
+    example: 2026-03-06:10:00
+    type: string
+    format: date-time
+    description: ""
+  issuer:
+    name: Issuer
+    description: Identifier of the party issuing the commercial invoice (e.g., DID)
+    type: string
+    format: uri
+    example: did:web:surfpro.example.com
+  credentialSubject:
+    name: Invoice
+    description: ""
+    type: object
+    properties:
+      purchaseOrderNumber:
+        example: PO1000293
+        type: string
+        description: Identifier assigned by the buyer to an order.
+      contractNumber:
+        example: PO1000293
+        type: string
+        description: Identifier of a contract concluded between parties such as between buyer and seller.
+      invoiceNumber:
+        example: INV-2024031-001
+        type: string
+        description: Reference number to identify an invoice.
+      issueDate:
+        example: "2025-03-10T00:00:00Z"
+        type: string
+        format: date-time
+        description: Date that a document was issued and when appropriate, signed or otherwise authenticated.
+      invoiceDate:
+        example: "2025-03-10T00:00:00Z"
+        type: string
+        format: date-time
+        description: Date of issue of an invoice.
+      paymentDueDate:
+        example: "2025-04-09T00:00:00Z"
+        type: string
+        format: date-time
+        description: Date when an amount due should be made available to the creditor under the terms of payment.
+      billOfLadingNumber:
+        example: POSL-2025-001234
+        type: string
+        description: Carrier-issued Bill of Lading or Waybill number for the shipment.
+      shippingMark:
+        example: WRS/LA/001-025
+        type: string
+        description: Marks and numbers placed on packages to identify the consignment and link physical goods to the document.
+      letterOfCreditNumber:
+        example: LC-2025-AU-456789
+        type: string
+        description: Letter of Credit reference number if applicable for payment.
+      portOfEntry:
+        description: Port where the goods will enter the destination country.
+        type: object
+        properties:
+          unLocode:
+            example: USNYC
+            type: string
+            description: UN/LOCODE port identifier (5 characters).
+          portName:
+            example: New York/Newark
+            type: string
+            description: Human-readable name of the port.
+      destinationCountry:
+        example: US
+        type: string
+        minLength: 2
+        maxLength: 2
+        description: Two-letter ISO 3166-1 alpha-2 country code for final destination.
+      buyer:
+        description: Party to which merchandise or services are sold.
+        type: object
+        properties:
+          type:
+            type: string
+            default: Party
+            enum:
+              - Party
+          id:
+            example: did:web:manufacturer.example.com
+            type: string
+            format: uri
+            description: A unique party identifier.
+          name:
+            example: Wave Rider Supplies, Inc
+            type: string
+            description: Trade party name.
+          postalAddress:
+            description: The postal address of the party.
+            type: object
+            properties:
+              type:
+                type: string
+                default: Address
+                enum:
+                  - Address
+              streetAddress:
+                example: 210 Ocean Road
+                type: string
+                description: The street component of the address
+              addressLocality:
+                example: Williamsburg
+                type: string
+                description: The city compomnent of the address
+              addressRegion:
+                example: NSW
+                type: string
+                description: The state component of the address
+              postalCode:
+                example: "75002"
+                type: string
+                description: ""
+              addressCountry:
+                example: AU
+                type: string
+                description: Country.
+      invoicee:
+        description: Party to whom an invoice is issued.
+        type: object
+        properties:
+          type:
+            type: string
+            default: Party
+            enum:
+              - Party
+          id:
+            example: did:web:manufacturer.example.com
+            type: string
+            format: uri
+            description: A unique party identifier.
+          name:
+            example: Wave Rider Supplies, Inc
+            type: string
+            description: Trade party name.
+          postalAddress:
+            description: The postal address of the party.
+            type: object
+            properties:
+              type:
+                type: string
+                default: Address
+                enum:
+                  - Address
+              streetAddress:
+                example: 210 Ocean Road
+                type: string
+                description: The street component of the address
+              addressLocality:
+                example: Williamsburg
+                type: string
+                description: The city compomnent of the address
+              addressRegion:
+                example: NSW
+                type: string
+                description: The state component of the address
+              postalCode:
+                example: "75002"
+                type: string
+                description: ""
+              addressCountry:
+                example: AU
+                type: string
+                description: Country.
+      consignee:
+        description: Party to whom the goods are consigned (may differ from buyer).
+        type: object
+        properties:
+          type:
+            type: string
+            default: Party
+            enum:
+              - Party
+          id:
+            example: did:web:warehouse.example.com
+            type: string
+            format: uri
+            description: A unique party identifier.
+          name:
+            example: Wave Rider Distribution Center
+            type: string
+            description: Consignee name.
+          postalAddress:
+            description: The postal address of the party.
+            type: object
+            properties:
+              type:
+                type: string
+                default: Address
+                enum:
+                  - Address
+              streetAddress:
+                example: 500 Logistics Boulevard
+                type: string
+                description: The street component of the address
+              addressLocality:
+                example: Los Angeles
+                type: string
+                description: The city component of the address
+              addressRegion:
+                example: CA
+                type: string
+                description: The state component of the address
+              postalCode:
+                example: "90045"
+                type: string
+                description: Postal code.
+              addressCountry:
+                example: US
+                type: string
+                description: Country code.
+      sellersBank:
+        description: Bank designated by the seller to receive payment.
+        type: object
+        properties:
+          type:
+            type: string
+            default: Party
+            enum:
+              - Party
+          id:
+            example: did:web:manufacturer.example.com
+            type: string
+            format: uri
+            description: A unique party identifier.
+          name:
+            example: Pacific Trade Bank
+            type: string
+            description: Trade party name.
+          postalAddress:
+            description: The postal address of the party.
+            type: object
+            properties:
+              type:
+                type: string
+                default: Address
+                enum:
+                  - Address
+              streetAddress:
+                example: 340 Main
+                type: string
+                description: The street component of the address
+              addressLocality:
+                example: Rileigh
+                type: string
+                description: The city compomnent of the address
+              addressRegion:
+                example: NSE
+                type: string
+                description: The state component of the address
+              postalCode:
+                example: "29110"
+                type: string
+                description: ""
+              addressCountry:
+                example: AU
+                type: string
+                description: Country.
+      seller:
+        description: Party selling merchandise or services to a buyer.
+        type: object
+        properties:
+          type:
+            type: string
+            default: Party
+            enum:
+              - Party
+          id:
+            example: did:web:manufacturer.example.com
+            type: string
+            format: uri
+            description: A unique party identifier.
+          name:
+            example: SurfPro Manufacturing Inc.
+            type: string
+            description: Trade party name.
+          postalAddress:
+            description: The postal address of the party.
+            type: object
+            properties:
+              type:
+                type: string
+                default: Address
+                enum:
+                  - Address
+              streetAddress:
+                example: 210 Ocean Road
+                type: string
+                description: The street component of the address
+              addressLocality:
+                example: Williamsburg
+                type: string
+                description: The city compomnent of the address
+              addressRegion:
+                example: NSW
+                type: string
+                description: The state component of the address
+              postalCode:
+                example: "75002"
+                type: string
+                description: ""
+              addressCountry:
+                example: AU
+                type: string
+                description: Country.
+      sellerBankAccountNumber:
+        example: 9876543210
+        type: string
+        description: Identifier of an account with the bank designated to receive payment.
+      originalLoadingLocation:
+        type: object
+        properties:
+          street:
+            type: string
+            description: ""
+          city:
+            type: string
+            description: ""
+          state:
+            type: string
+            description: ""
+          zip:
+            type: number
+            description: ""
+          iataAirportCode:
+            type: string
+            description: ""
+          unlocode:
+            type: string
+            format: uri
+            description: ""
+        description: >-
+          Seaport, airport, freight terminal, rail station or other location where the goods were first loaded onto the
+          means of transport being utilised for their carriage.
+      originCountry:
+        type: object
+        properties:
+          street:
+            type: string
+            description: ""
+          city:
+            type: string
+            description: ""
+          state:
+            type: string
+            description: ""
+          zip:
+            type: number
+            description: ""
+          country:
+            type: string
+            description: ""
+          iataAirportCode:
+            type: string
+            description: ""
+          unlocode:
+            type: string
+            format: uri
+            description: ""
+        description: >-
+          Name of the country in which the goods have been produced or manufactured, according to criteria laid down for
+          the application of the Customs tariff or quantitative restrictions, or any measure related to trade.
+      tradeTermsConditionsDescription:
+        example: FOB Los Angeles Seaport
+        type: string
+        description: Free form description of delivery or transport terms (Incoterms).
+      tradeTermsConditionsCode:
+        example: FOB
+        type: string
+        description: Code specifying the delivery or transport terms (Incoterms).
+      paymentTerms:
+        example: Net 30 days
+        type: string
+        description: Identification of the terms of payment between the parties to a transaction (generic term).
+      paymentMethod:
+        example: Wire Transfer
+        type: string
+        description: Code specifying a method of payment.
+      itemsShipped:
+        name: Items Shipped
+        description: Invoice line items
+        type: array
+        items:
+          type: object
+          properties:
+            product:
+              type: object
+              properties:
+                id:
+                  example: urn:uuid:e9bf65a3-9ff3-4988-8c44-2535b949279f
+                  type: string
+                  format: uri
+                  description: A unique identifier for the product.
+                name:
+                  type: string
+                  description: ""
+                description:
+                  type: string
+                  description: ""
+              description: >-
+                Plain language description of the nature of a goods item sufficient to identify it for customs,
+                statistical or transport purposes.
+            sku:
+              example: 1000826518
+              type: string
+              description: ""
+            itemCount:
+              type: number
+              description: ""
+            netWeight:
+              description: Total net weight (mass) of all the goods items referred to as one consignment.
+              type: object
+              properties:
+                amount:
+                  example: 22
+                  type: number
+                  format: float
+                  description: ""
+                unit:
+                  example: KGS
+                  type: string
+                  description: ""
+            grossWeight:
+              description: ""
+              type: object
+              properties:
+                amount:
+                  example: 22
+                  type: number
+                  format: float
+                  description: ""
+                unit:
+                  example: KGS
+                  type: string
+                  description: ""
+            productPrice:
+              description: ""
+              type: object
+              properties:
+                amount:
+                  example: 2000
+                  type: number
+                  format: float
+                  description: ""
+                currency:
+                  example: USD
+                  type: string
+                  description: ""
+            commodity:
+              example: 950630
+              type: string
+              description: Code specifying a type of goods for Customs, transport or statistical purposes (generic term).
+            price:
+              description: ""
+              type: object
+              properties:
+                amount:
+                  example: 2000
+                  type: number
+                  format: float
+                  description: ""
+                currency:
+                  example: USD
+                  type: string
+                  description: ""
+          description: A collection of information specific to an item being used or reported on for supply chain trade purposes.
+      freightCost:
+        description: Cost of freight/shipping charges.
+        type: object
+        properties:
+          amount:
+            example: 150
+            type: number
+            format: float
+            description: Freight charge amount.
+          currency:
+            example: USD
+            type: string
+            minLength: 3
+            maxLength: 3
+            description: Three-letter ISO 4217 currency code.
+      insuranceCost:
+        description: Cost of insurance for the shipment.
+        type: object
+        properties:
+          amount:
+            example: 50
+            type: number
+            format: float
+            description: Insurance charge amount.
+          currency:
+            example: USD
+            type: string
+            minLength: 3
+            maxLength: 3
+            description: Three-letter ISO 4217 currency code.
+      allowancesCharges:
+        description: Discounts or surcharges applied at invoice level, after line item totals and before the final total.
+        type: array
+        items:
+          type: object
+          properties:
+            type:
+              type: string
+              enum:
+                - discount
+                - surcharge
+              description: Whether this entry reduces (discount) or increases (surcharge) the invoice total.
+            description:
+              type: string
+              description: Free text explanation of the allowance or charge.
+            amount:
+              type: object
+              properties:
+                amount:
+                  example: 500
+                  type: number
+                  format: float
+                  description: Monetary value of the allowance or charge.
+                currency:
+                  example: USD
+                  type: string
+                  minLength: 3
+                  maxLength: 3
+                  description: Three-letter ISO 4217 currency code.
+      totalAmount:
+        description: Total monetary amount charged in respect of one or more invoices.
+        type: object
+        properties:
+          amount:
+            example: 2000
+            type: number
+            format: float
+            description: ""
+          currency:
+            example: USD
+            type: string
+            description: ""

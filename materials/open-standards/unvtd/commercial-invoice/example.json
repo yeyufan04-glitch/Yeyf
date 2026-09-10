@@ -1,0 +1,269 @@
+{
+  "@context": "https://unvtd.unece.org/commercial-invoice-context.json",
+  "type": [
+    "VerifiableCredential",
+    "CommercialInvoice"
+  ],
+  "credentialSchema": {
+    "id": "https://unvtd.unece.org/commercial-invoice-schema.yaml",
+    "type": "JsonSchema"
+  },
+  "id": "urn:uuid:e9bf65a3-9ff3-4988-8c44-2535b949279f",
+  "validFrom": "2025-03-06T10:00:00Z",
+  "issuer": "did:web:surfpro.example.com",
+  "credentialSubject": {
+    "purchaseOrderNumber": "PO-2025-001",
+    "contractNumber": "CTR-2025-SURF-001",
+    "invoiceNumber": "INV-2025-031-001",
+    "issueDate": "2025-03-10T00:00:00Z",
+    "invoiceDate": "2025-03-10T00:00:00Z",
+    "paymentDueDate": "2025-04-09T00:00:00Z",
+    "billOfLadingNumber": "POSL-2025-001234",
+    "shippingMark": "WRS/LA/001-025",
+    "letterOfCreditNumber": "LC-2025-AU-456789",
+    "portOfEntry": {
+      "unLocode": "USLAX",
+      "portName": "Los Angeles"
+    },
+    "destinationCountry": "US",
+    "buyer": {
+      "type": "Party",
+      "id": "did:web:waveridersupplies.example.com",
+      "name": "Wave Rider Supplies, Inc",
+      "postalAddress": {
+        "type": "Address",
+        "streetAddress": "210 Ocean Road",
+        "addressLocality": "Williamsburg",
+        "addressRegion": "NSW",
+        "postalCode": "75002",
+        "addressCountry": "AU"
+      }
+    },
+    "invoicee": {
+      "type": "Party",
+      "id": "did:web:waveridersupplies.example.com",
+      "name": "Wave Rider Supplies, Inc",
+      "postalAddress": {
+        "type": "Address",
+        "streetAddress": "210 Ocean Road",
+        "addressLocality": "Williamsburg",
+        "addressRegion": "NSW",
+        "postalCode": "75002",
+        "addressCountry": "AU"
+      }
+    },
+    "consignee": {
+      "type": "Party",
+      "id": "did:web:waveriderdistribution.example.com",
+      "name": "Wave Rider Distribution Center",
+      "postalAddress": {
+        "type": "Address",
+        "streetAddress": "500 Logistics Boulevard",
+        "addressLocality": "Los Angeles",
+        "addressRegion": "CA",
+        "postalCode": "90045",
+        "addressCountry": "US"
+      }
+    },
+    "sellersBank": {
+      "type": "Party",
+      "id": "did:web:pacifictrade.bank.au",
+      "name": "Pacific Trade Bank",
+      "postalAddress": {
+        "type": "Address",
+        "streetAddress": "340 Main Street",
+        "addressLocality": "Brisbane",
+        "addressRegion": "QLD",
+        "postalCode": "29110",
+        "addressCountry": "AU"
+      }
+    },
+    "seller": {
+      "type": "Party",
+      "id": "did:web:surfpro.example.com",
+      "name": "SurfPro Manufacturing Inc.",
+      "postalAddress": {
+        "type": "Address",
+        "streetAddress": "150 Industrial Drive",
+        "addressLocality": "Gold Coast",
+        "addressRegion": "QLD",
+        "postalCode": "4217",
+        "addressCountry": "AU"
+      }
+    },
+    "sellerBankAccountNumber": "9876543210",
+    "originalLoadingLocation": {
+      "streetAddress": "Port of Gold Coast",
+      "addressLocality": "Gold Coast",
+      "addressRegion": "QLD",
+      "postalCode": "4215",
+      "iataAirportCode": "OOL",
+      "unLocode": "https://service.unece.org/trade/locode/au.htm#AUGOL"
+    },
+    "originCountry": {
+      "addressLocality": "Gold Coast",
+      "addressRegion": "QLD",
+      "addressCountry": "AU"
+    },
+    "tradeTermsConditionsDescription": "FOB Port of Gold Coast",
+    "tradeTermsConditionsCode": "FOB",
+    "paymentTerms": "Net 30 days",
+    "paymentMethod": "Wire Transfer",
+    "itemsShipped": [
+      {
+        "type": "TradeLineItem",
+        "product": {
+          "type": "Product",
+          "id": "urn:uuid:surf-001-longboard",
+          "name": "Professional Longboard - Ocean Series",
+          "description": "High-performance longboard with premium bamboo core and fiberglass construction, 9'6\" length"
+        },
+        "sku": "SURF-LB-001",
+        "itemCount": 25,
+        "netWeight": {
+          "type": "Quantity",
+          "amount": 187.5,
+          "unit": "KGS"
+        },
+        "grossWeight": {
+          "type": "Quantity",
+          "amount": 200,
+          "unit": "KGS"
+        },
+        "productPrice": {
+          "type": "MonetaryAmount",
+          "amount": 750,
+          "currency": "USD"
+        },
+        "commodity": "950630",
+        "price": {
+          "type": "MonetaryAmount",
+          "amount": 18750,
+          "currency": "USD"
+        }
+      },
+      {
+        "type": "TradeLineItem",
+        "product": {
+          "type": "Product",
+          "id": "urn:uuid:surf-002-shortboard",
+          "name": "Performance Shortboard - Pro Series",
+          "description": "Competition-grade shortboard with carbon fiber reinforcement, 6'2\" length"
+        },
+        "sku": "SURF-SB-002",
+        "itemCount": 50,
+        "netWeight": {
+          "type": "Quantity",
+          "amount": 150,
+          "unit": "KGS"
+        },
+        "grossWeight": {
+          "type": "Quantity",
+          "amount": 165,
+          "unit": "KGS"
+        },
+        "productPrice": {
+          "type": "MonetaryAmount",
+          "amount": 650,
+          "currency": "USD"
+        },
+        "commodity": "950630",
+        "price": {
+          "type": "MonetaryAmount",
+          "amount": 32500,
+          "currency": "USD"
+        }
+      },
+      {
+        "type": "TradeLineItem",
+        "product": {
+          "type": "Product",
+          "id": "urn:uuid:surf-003-fins",
+          "name": "Surfboard Fin Set - Thruster",
+          "description": "Professional thruster fin set with honeycomb construction"
+        },
+        "sku": "SURF-FIN-003",
+        "itemCount": 100,
+        "netWeight": {
+          "type": "Quantity",
+          "amount": 25,
+          "unit": "KGS"
+        },
+        "grossWeight": {
+          "type": "Quantity",
+          "amount": 30,
+          "unit": "KGS"
+        },
+        "productPrice": {
+          "type": "MonetaryAmount",
+          "amount": 85,
+          "currency": "USD"
+        },
+        "commodity": "950630",
+        "price": {
+          "type": "MonetaryAmount",
+          "amount": 8500,
+          "currency": "USD"
+        }
+      },
+      {
+        "type": "TradeLineItem",
+        "product": {
+          "type": "Product",
+          "id": "urn:uuid:surf-004-wetsuit",
+          "name": "Premium Wetsuit - 3/2mm",
+          "description": "High-quality neoprene wetsuit with sealed seams, 3/2mm thickness"
+        },
+        "sku": "SURF-WS-004",
+        "itemCount": 75,
+        "netWeight": {
+          "type": "Quantity",
+          "amount": 112.5,
+          "unit": "KGS"
+        },
+        "grossWeight": {
+          "type": "Quantity",
+          "amount": 125,
+          "unit": "KGS"
+        },
+        "productPrice": {
+          "type": "MonetaryAmount",
+          "amount": 180,
+          "currency": "USD"
+        },
+        "commodity": "621220",
+        "price": {
+          "type": "MonetaryAmount",
+          "amount": 13500,
+          "currency": "USD"
+        }
+      }
+    ],
+    "freightCost": {
+      "type": "MonetaryAmount",
+      "amount": 1250,
+      "currency": "USD"
+    },
+    "insuranceCost": {
+      "type": "MonetaryAmount",
+      "amount": 366.25,
+      "currency": "USD"
+    },
+    "allowancesCharges": [
+      {
+        "type": "discount",
+        "description": "Volume discount",
+        "amount": {
+          "type": "MonetaryAmount",
+          "amount": 500,
+          "currency": "USD"
+        }
+      }
+    ],
+    "totalAmount": {
+      "type": "MonetaryAmount",
+      "amount": 74866.25,
+      "currency": "USD"
+    }
+  }
+}
