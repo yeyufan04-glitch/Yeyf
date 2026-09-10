@@ -1,0 +1,1006 @@
+{
+  "@context": "https://unvtd.unece.org/packing-list-context.json",
+  "type": [
+    "VerifiableCredential",
+    "PackingList"
+  ],
+  "credentialSchema": {
+    "id": "https://unvtd.unece.org/packing-list-schema.yaml",
+    "type": "JsonSchema"
+  },
+  "id": "urn:uuid:pl-2025-surfpro-001",
+  "validFrom": "2025-03-09T10:00:00Z",
+  "validTo": "2026-03-09T10:00:00Z",
+  "issuer": "did:web:surfpro.example.com",
+  "credentialSubject": {
+    "issueDate": "2025-03-09T00:00:00Z",
+    "despatchDate": "2025-03-11T00:00:00Z",
+    "purchaseOrderNumber": "PO-2025-001",
+    "contractNumber": "CTR-2025-SURF-001",
+    "invoiceNumber": "INV-2025-031-001",
+    "transportContractNumber": "BKG123456789",
+    "buyer": {
+      "type": "Party",
+      "id": "did:web:waveridersupplies.example.com",
+      "name": "Wave Rider Supplies, Inc",
+      "postalAddress": {
+        "type": "Address",
+        "streetAddress": "210 Ocean Road",
+        "addressLocality": "Williamsburg",
+        "addressRegion": "NSW",
+        "postalCode": "75002",
+        "addressCountry": "AU"
+      }
+    },
+    "seller": {
+      "type": "Party",
+      "id": "did:web:surfpro.example.com",
+      "name": "SurfPro Manufacturing Inc.",
+      "postalAddress": {
+        "type": "Address",
+        "streetAddress": "150 Industrial Drive",
+        "addressLocality": "Gold Coast",
+        "addressRegion": "QLD",
+        "postalCode": "4217",
+        "addressCountry": "AU"
+      }
+    },
+    "consignee": {
+      "type": "Party",
+      "id": "did:web:waveridersupplies.example.com",
+      "name": "Wave Rider Supplies, Inc",
+      "postalAddress": {
+        "type": "Address",
+        "streetAddress": "210 Ocean Road",
+        "addressLocality": "Williamsburg",
+        "addressRegion": "NSW",
+        "postalCode": "75002",
+        "addressCountry": "AU"
+      }
+    },
+    "carrier": {
+      "type": "Party",
+      "id": "did:web:pacificshipping.example.com",
+      "name": "Pacific Ocean Shipping Lines",
+      "postalAddress": {
+        "type": "Address",
+        "streetAddress": "88 Harbour Street",
+        "addressLocality": "Sydney",
+        "addressRegion": "NSW",
+        "postalCode": "2000",
+        "addressCountry": "AU"
+      }
+    },
+    "deliveryLocation": {
+      "name": "Wave Rider Supplies Warehouse",
+      "streetAddress": "210 Ocean Road",
+      "addressLocality": "Williamsburg",
+      "addressRegion": "NSW",
+      "postalCode": "75002",
+      "addressCountry": "AU"
+    },
+    "despatchLocation": {
+      "name": "SurfPro Manufacturing Facility",
+      "streetAddress": "150 Industrial Drive",
+      "addressLocality": "Gold Coast",
+      "addressRegion": "QLD",
+      "postalCode": "4217",
+      "addressCountry": "AU"
+    },
+    "originCountry": {
+      "addressCountry": "AU",
+      "name": "Australia"
+    },
+    "baseportUnloadingLocation": {
+      "name": "Port of Sydney",
+      "addressLocality": "Sydney",
+      "addressRegion": "NSW",
+      "addressCountry": "AU",
+      "unLocode": "https://service.unece.org/trade/locode/au.htm#AUSYD"
+    },
+    "totalGrossWeight": {
+      "type": "Quantity",
+      "amount": 520,
+      "unit": "KGS"
+    },
+    "totalNetWeight": {
+      "type": "Quantity",
+      "amount": 475,
+      "unit": "KGS"
+    },
+    "totalPackages": 18,
+    "totalVolume": {
+      "type": "Quantity",
+      "amount": 8.5,
+      "unit": "CBM"
+    },
+    "handlingInstructions": "Handle with care. Keep dry. This side up.",
+    "transportTemperature": "Ambient temperature",
+    "conveyanceReferenceNumber": "VOYAGE-2025-AU-001",
+    "vehicleRegistrationNumber": "IMO9876543",
+    "packages": [
+      {
+        "packageNumber": 1,
+        "packageType": "CT",
+        "shippingMark": "SURFPRO/WRS/001",
+        "length": {
+          "type": "Quantity",
+          "amount": 250,
+          "unit": "CM"
+        },
+        "width": {
+          "type": "Quantity",
+          "amount": 50,
+          "unit": "CM"
+        },
+        "height": {
+          "type": "Quantity",
+          "amount": 40,
+          "unit": "CM"
+        },
+        "grossWeight": {
+          "type": "Quantity",
+          "amount": 40,
+          "unit": "KGS"
+        },
+        "netWeight": {
+          "type": "Quantity",
+          "amount": 37.5,
+          "unit": "KGS"
+        },
+        "volume": {
+          "type": "Quantity",
+          "amount": 0.5,
+          "unit": "CBM"
+        },
+        "items": [
+          {
+            "description": "Professional Longboard - Ocean Series",
+            "sku": "SURF-LB-001",
+            "quantity": 5,
+            "hsCode": "950630",
+            "originCountry": "AU",
+            "unitWeight": {
+              "type": "Quantity",
+              "amount": 7.5,
+              "unit": "KGS"
+            }
+          }
+        ]
+      },
+      {
+        "packageNumber": 2,
+        "packageType": "CT",
+        "shippingMark": "SURFPRO/WRS/002",
+        "length": {
+          "type": "Quantity",
+          "amount": 250,
+          "unit": "CM"
+        },
+        "width": {
+          "type": "Quantity",
+          "amount": 50,
+          "unit": "CM"
+        },
+        "height": {
+          "type": "Quantity",
+          "amount": 40,
+          "unit": "CM"
+        },
+        "grossWeight": {
+          "type": "Quantity",
+          "amount": 40,
+          "unit": "KGS"
+        },
+        "netWeight": {
+          "type": "Quantity",
+          "amount": 37.5,
+          "unit": "KGS"
+        },
+        "volume": {
+          "type": "Quantity",
+          "amount": 0.5,
+          "unit": "CBM"
+        },
+        "items": [
+          {
+            "description": "Professional Longboard - Ocean Series",
+            "sku": "SURF-LB-001",
+            "quantity": 5,
+            "hsCode": "950630",
+            "originCountry": "AU",
+            "unitWeight": {
+              "type": "Quantity",
+              "amount": 7.5,
+              "unit": "KGS"
+            }
+          }
+        ]
+      },
+      {
+        "packageNumber": 3,
+        "packageType": "CT",
+        "shippingMark": "SURFPRO/WRS/003",
+        "length": {
+          "type": "Quantity",
+          "amount": 250,
+          "unit": "CM"
+        },
+        "width": {
+          "type": "Quantity",
+          "amount": 50,
+          "unit": "CM"
+        },
+        "height": {
+          "type": "Quantity",
+          "amount": 40,
+          "unit": "CM"
+        },
+        "grossWeight": {
+          "type": "Quantity",
+          "amount": 40,
+          "unit": "KGS"
+        },
+        "netWeight": {
+          "type": "Quantity",
+          "amount": 37.5,
+          "unit": "KGS"
+        },
+        "volume": {
+          "type": "Quantity",
+          "amount": 0.5,
+          "unit": "CBM"
+        },
+        "items": [
+          {
+            "description": "Professional Longboard - Ocean Series",
+            "sku": "SURF-LB-001",
+            "quantity": 5,
+            "hsCode": "950630",
+            "originCountry": "AU",
+            "unitWeight": {
+              "type": "Quantity",
+              "amount": 7.5,
+              "unit": "KGS"
+            }
+          }
+        ]
+      },
+      {
+        "packageNumber": 4,
+        "packageType": "CT",
+        "shippingMark": "SURFPRO/WRS/004",
+        "length": {
+          "type": "Quantity",
+          "amount": 250,
+          "unit": "CM"
+        },
+        "width": {
+          "type": "Quantity",
+          "amount": 50,
+          "unit": "CM"
+        },
+        "height": {
+          "type": "Quantity",
+          "amount": 40,
+          "unit": "CM"
+        },
+        "grossWeight": {
+          "type": "Quantity",
+          "amount": 40,
+          "unit": "KGS"
+        },
+        "netWeight": {
+          "type": "Quantity",
+          "amount": 37.5,
+          "unit": "KGS"
+        },
+        "volume": {
+          "type": "Quantity",
+          "amount": 0.5,
+          "unit": "CBM"
+        },
+        "items": [
+          {
+            "description": "Professional Longboard - Ocean Series",
+            "sku": "SURF-LB-001",
+            "quantity": 5,
+            "hsCode": "950630",
+            "originCountry": "AU",
+            "unitWeight": {
+              "type": "Quantity",
+              "amount": 7.5,
+              "unit": "KGS"
+            }
+          }
+        ]
+      },
+      {
+        "packageNumber": 5,
+        "packageType": "CT",
+        "shippingMark": "SURFPRO/WRS/005",
+        "length": {
+          "type": "Quantity",
+          "amount": 250,
+          "unit": "CM"
+        },
+        "width": {
+          "type": "Quantity",
+          "amount": 50,
+          "unit": "CM"
+        },
+        "height": {
+          "type": "Quantity",
+          "amount": 40,
+          "unit": "CM"
+        },
+        "grossWeight": {
+          "type": "Quantity",
+          "amount": 40,
+          "unit": "KGS"
+        },
+        "netWeight": {
+          "type": "Quantity",
+          "amount": 37.5,
+          "unit": "KGS"
+        },
+        "volume": {
+          "type": "Quantity",
+          "amount": 0.5,
+          "unit": "CBM"
+        },
+        "items": [
+          {
+            "description": "Professional Longboard - Ocean Series",
+            "sku": "SURF-LB-001",
+            "quantity": 5,
+            "hsCode": "950630",
+            "originCountry": "AU",
+            "unitWeight": {
+              "type": "Quantity",
+              "amount": 7.5,
+              "unit": "KGS"
+            }
+          }
+        ]
+      },
+      {
+        "packageNumber": 6,
+        "packageType": "CT",
+        "shippingMark": "SURFPRO/WRS/006",
+        "length": {
+          "type": "Quantity",
+          "amount": 200,
+          "unit": "CM"
+        },
+        "width": {
+          "type": "Quantity",
+          "amount": 50,
+          "unit": "CM"
+        },
+        "height": {
+          "type": "Quantity",
+          "amount": 40,
+          "unit": "CM"
+        },
+        "grossWeight": {
+          "type": "Quantity",
+          "amount": 33,
+          "unit": "KGS"
+        },
+        "netWeight": {
+          "type": "Quantity",
+          "amount": 30,
+          "unit": "KGS"
+        },
+        "volume": {
+          "type": "Quantity",
+          "amount": 0.4,
+          "unit": "CBM"
+        },
+        "items": [
+          {
+            "description": "Performance Shortboard - Pro Series",
+            "sku": "SURF-SB-002",
+            "quantity": 10,
+            "hsCode": "950630",
+            "originCountry": "AU",
+            "unitWeight": {
+              "type": "Quantity",
+              "amount": 3,
+              "unit": "KGS"
+            }
+          }
+        ]
+      },
+      {
+        "packageNumber": 7,
+        "packageType": "CT",
+        "shippingMark": "SURFPRO/WRS/007",
+        "length": {
+          "type": "Quantity",
+          "amount": 200,
+          "unit": "CM"
+        },
+        "width": {
+          "type": "Quantity",
+          "amount": 50,
+          "unit": "CM"
+        },
+        "height": {
+          "type": "Quantity",
+          "amount": 40,
+          "unit": "CM"
+        },
+        "grossWeight": {
+          "type": "Quantity",
+          "amount": 33,
+          "unit": "KGS"
+        },
+        "netWeight": {
+          "type": "Quantity",
+          "amount": 30,
+          "unit": "KGS"
+        },
+        "volume": {
+          "type": "Quantity",
+          "amount": 0.4,
+          "unit": "CBM"
+        },
+        "items": [
+          {
+            "description": "Performance Shortboard - Pro Series",
+            "sku": "SURF-SB-002",
+            "quantity": 10,
+            "hsCode": "950630",
+            "originCountry": "AU",
+            "unitWeight": {
+              "type": "Quantity",
+              "amount": 3,
+              "unit": "KGS"
+            }
+          }
+        ]
+      },
+      {
+        "packageNumber": 8,
+        "packageType": "CT",
+        "shippingMark": "SURFPRO/WRS/008",
+        "length": {
+          "type": "Quantity",
+          "amount": 200,
+          "unit": "CM"
+        },
+        "width": {
+          "type": "Quantity",
+          "amount": 50,
+          "unit": "CM"
+        },
+        "height": {
+          "type": "Quantity",
+          "amount": 40,
+          "unit": "CM"
+        },
+        "grossWeight": {
+          "type": "Quantity",
+          "amount": 33,
+          "unit": "KGS"
+        },
+        "netWeight": {
+          "type": "Quantity",
+          "amount": 30,
+          "unit": "KGS"
+        },
+        "volume": {
+          "type": "Quantity",
+          "amount": 0.4,
+          "unit": "CBM"
+        },
+        "items": [
+          {
+            "description": "Performance Shortboard - Pro Series",
+            "sku": "SURF-SB-002",
+            "quantity": 10,
+            "hsCode": "950630",
+            "originCountry": "AU",
+            "unitWeight": {
+              "type": "Quantity",
+              "amount": 3,
+              "unit": "KGS"
+            }
+          }
+        ]
+      },
+      {
+        "packageNumber": 9,
+        "packageType": "CT",
+        "shippingMark": "SURFPRO/WRS/009",
+        "length": {
+          "type": "Quantity",
+          "amount": 200,
+          "unit": "CM"
+        },
+        "width": {
+          "type": "Quantity",
+          "amount": 50,
+          "unit": "CM"
+        },
+        "height": {
+          "type": "Quantity",
+          "amount": 40,
+          "unit": "CM"
+        },
+        "grossWeight": {
+          "type": "Quantity",
+          "amount": 33,
+          "unit": "KGS"
+        },
+        "netWeight": {
+          "type": "Quantity",
+          "amount": 30,
+          "unit": "KGS"
+        },
+        "volume": {
+          "type": "Quantity",
+          "amount": 0.4,
+          "unit": "CBM"
+        },
+        "items": [
+          {
+            "description": "Performance Shortboard - Pro Series",
+            "sku": "SURF-SB-002",
+            "quantity": 10,
+            "hsCode": "950630",
+            "originCountry": "AU",
+            "unitWeight": {
+              "type": "Quantity",
+              "amount": 3,
+              "unit": "KGS"
+            }
+          }
+        ]
+      },
+      {
+        "packageNumber": 10,
+        "packageType": "CT",
+        "shippingMark": "SURFPRO/WRS/010",
+        "length": {
+          "type": "Quantity",
+          "amount": 200,
+          "unit": "CM"
+        },
+        "width": {
+          "type": "Quantity",
+          "amount": 50,
+          "unit": "CM"
+        },
+        "height": {
+          "type": "Quantity",
+          "amount": 40,
+          "unit": "CM"
+        },
+        "grossWeight": {
+          "type": "Quantity",
+          "amount": 33,
+          "unit": "KGS"
+        },
+        "netWeight": {
+          "type": "Quantity",
+          "amount": 30,
+          "unit": "KGS"
+        },
+        "volume": {
+          "type": "Quantity",
+          "amount": 0.4,
+          "unit": "CBM"
+        },
+        "items": [
+          {
+            "description": "Performance Shortboard - Pro Series",
+            "sku": "SURF-SB-002",
+            "quantity": 10,
+            "hsCode": "950630",
+            "originCountry": "AU",
+            "unitWeight": {
+              "type": "Quantity",
+              "amount": 3,
+              "unit": "KGS"
+            }
+          }
+        ]
+      },
+      {
+        "packageNumber": 11,
+        "packageType": "CT",
+        "shippingMark": "SURFPRO/WRS/011",
+        "length": {
+          "type": "Quantity",
+          "amount": 60,
+          "unit": "CM"
+        },
+        "width": {
+          "type": "Quantity",
+          "amount": 40,
+          "unit": "CM"
+        },
+        "height": {
+          "type": "Quantity",
+          "amount": 30,
+          "unit": "CM"
+        },
+        "grossWeight": {
+          "type": "Quantity",
+          "amount": 7.5,
+          "unit": "KGS"
+        },
+        "netWeight": {
+          "type": "Quantity",
+          "amount": 6.25,
+          "unit": "KGS"
+        },
+        "volume": {
+          "type": "Quantity",
+          "amount": 0.072,
+          "unit": "CBM"
+        },
+        "items": [
+          {
+            "description": "Surfboard Fin Set - Thruster",
+            "sku": "SURF-FIN-003",
+            "quantity": 25,
+            "hsCode": "950630",
+            "originCountry": "AU",
+            "unitWeight": {
+              "type": "Quantity",
+              "amount": 0.25,
+              "unit": "KGS"
+            }
+          }
+        ]
+      },
+      {
+        "packageNumber": 12,
+        "packageType": "CT",
+        "shippingMark": "SURFPRO/WRS/012",
+        "length": {
+          "type": "Quantity",
+          "amount": 60,
+          "unit": "CM"
+        },
+        "width": {
+          "type": "Quantity",
+          "amount": 40,
+          "unit": "CM"
+        },
+        "height": {
+          "type": "Quantity",
+          "amount": 30,
+          "unit": "CM"
+        },
+        "grossWeight": {
+          "type": "Quantity",
+          "amount": 7.5,
+          "unit": "KGS"
+        },
+        "netWeight": {
+          "type": "Quantity",
+          "amount": 6.25,
+          "unit": "KGS"
+        },
+        "volume": {
+          "type": "Quantity",
+          "amount": 0.072,
+          "unit": "CBM"
+        },
+        "items": [
+          {
+            "description": "Surfboard Fin Set - Thruster",
+            "sku": "SURF-FIN-003",
+            "quantity": 25,
+            "hsCode": "950630",
+            "originCountry": "AU",
+            "unitWeight": {
+              "type": "Quantity",
+              "amount": 0.25,
+              "unit": "KGS"
+            }
+          }
+        ]
+      },
+      {
+        "packageNumber": 13,
+        "packageType": "CT",
+        "shippingMark": "SURFPRO/WRS/013",
+        "length": {
+          "type": "Quantity",
+          "amount": 60,
+          "unit": "CM"
+        },
+        "width": {
+          "type": "Quantity",
+          "amount": 40,
+          "unit": "CM"
+        },
+        "height": {
+          "type": "Quantity",
+          "amount": 30,
+          "unit": "CM"
+        },
+        "grossWeight": {
+          "type": "Quantity",
+          "amount": 7.5,
+          "unit": "KGS"
+        },
+        "netWeight": {
+          "type": "Quantity",
+          "amount": 6.25,
+          "unit": "KGS"
+        },
+        "volume": {
+          "type": "Quantity",
+          "amount": 0.072,
+          "unit": "CBM"
+        },
+        "items": [
+          {
+            "description": "Surfboard Fin Set - Thruster",
+            "sku": "SURF-FIN-003",
+            "quantity": 25,
+            "hsCode": "950630",
+            "originCountry": "AU",
+            "unitWeight": {
+              "type": "Quantity",
+              "amount": 0.25,
+              "unit": "KGS"
+            }
+          }
+        ]
+      },
+      {
+        "packageNumber": 14,
+        "packageType": "CT",
+        "shippingMark": "SURFPRO/WRS/014",
+        "length": {
+          "type": "Quantity",
+          "amount": 60,
+          "unit": "CM"
+        },
+        "width": {
+          "type": "Quantity",
+          "amount": 40,
+          "unit": "CM"
+        },
+        "height": {
+          "type": "Quantity",
+          "amount": 30,
+          "unit": "CM"
+        },
+        "grossWeight": {
+          "type": "Quantity",
+          "amount": 7.5,
+          "unit": "KGS"
+        },
+        "netWeight": {
+          "type": "Quantity",
+          "amount": 6.25,
+          "unit": "KGS"
+        },
+        "volume": {
+          "type": "Quantity",
+          "amount": 0.072,
+          "unit": "CBM"
+        },
+        "items": [
+          {
+            "description": "Surfboard Fin Set - Thruster",
+            "sku": "SURF-FIN-003",
+            "quantity": 25,
+            "hsCode": "950630",
+            "originCountry": "AU",
+            "unitWeight": {
+              "type": "Quantity",
+              "amount": 0.25,
+              "unit": "KGS"
+            }
+          }
+        ]
+      },
+      {
+        "packageNumber": 15,
+        "packageType": "CT",
+        "shippingMark": "SURFPRO/WRS/015",
+        "length": {
+          "type": "Quantity",
+          "amount": 100,
+          "unit": "CM"
+        },
+        "width": {
+          "type": "Quantity",
+          "amount": 60,
+          "unit": "CM"
+        },
+        "height": {
+          "type": "Quantity",
+          "amount": 50,
+          "unit": "CM"
+        },
+        "grossWeight": {
+          "type": "Quantity",
+          "amount": 31.25,
+          "unit": "KGS"
+        },
+        "netWeight": {
+          "type": "Quantity",
+          "amount": 28.125,
+          "unit": "KGS"
+        },
+        "volume": {
+          "type": "Quantity",
+          "amount": 0.3,
+          "unit": "CBM"
+        },
+        "items": [
+          {
+            "description": "Premium Wetsuit - 3/2mm",
+            "sku": "SURF-WS-004",
+            "quantity": 19,
+            "hsCode": "621220",
+            "originCountry": "AU",
+            "unitWeight": {
+              "type": "Quantity",
+              "amount": 1.5,
+              "unit": "KGS"
+            }
+          }
+        ]
+      },
+      {
+        "packageNumber": 16,
+        "packageType": "CT",
+        "shippingMark": "SURFPRO/WRS/016",
+        "length": {
+          "type": "Quantity",
+          "amount": 100,
+          "unit": "CM"
+        },
+        "width": {
+          "type": "Quantity",
+          "amount": 60,
+          "unit": "CM"
+        },
+        "height": {
+          "type": "Quantity",
+          "amount": 50,
+          "unit": "CM"
+        },
+        "grossWeight": {
+          "type": "Quantity",
+          "amount": 31.25,
+          "unit": "KGS"
+        },
+        "netWeight": {
+          "type": "Quantity",
+          "amount": 28.125,
+          "unit": "KGS"
+        },
+        "volume": {
+          "type": "Quantity",
+          "amount": 0.3,
+          "unit": "CBM"
+        },
+        "items": [
+          {
+            "description": "Premium Wetsuit - 3/2mm",
+            "sku": "SURF-WS-004",
+            "quantity": 19,
+            "hsCode": "621220",
+            "originCountry": "AU",
+            "unitWeight": {
+              "type": "Quantity",
+              "amount": 1.5,
+              "unit": "KGS"
+            }
+          }
+        ]
+      },
+      {
+        "packageNumber": 17,
+        "packageType": "CT",
+        "shippingMark": "SURFPRO/WRS/017",
+        "length": {
+          "type": "Quantity",
+          "amount": 100,
+          "unit": "CM"
+        },
+        "width": {
+          "type": "Quantity",
+          "amount": 60,
+          "unit": "CM"
+        },
+        "height": {
+          "type": "Quantity",
+          "amount": 50,
+          "unit": "CM"
+        },
+        "grossWeight": {
+          "type": "Quantity",
+          "amount": 31.25,
+          "unit": "KGS"
+        },
+        "netWeight": {
+          "type": "Quantity",
+          "amount": 28.125,
+          "unit": "KGS"
+        },
+        "volume": {
+          "type": "Quantity",
+          "amount": 0.3,
+          "unit": "CBM"
+        },
+        "items": [
+          {
+            "description": "Premium Wetsuit - 3/2mm",
+            "sku": "SURF-WS-004",
+            "quantity": 19,
+            "hsCode": "621220",
+            "originCountry": "AU",
+            "unitWeight": {
+              "type": "Quantity",
+              "amount": 1.5,
+              "unit": "KGS"
+            }
+          }
+        ]
+      },
+      {
+        "packageNumber": 18,
+        "packageType": "CT",
+        "shippingMark": "SURFPRO/WRS/018",
+        "length": {
+          "type": "Quantity",
+          "amount": 100,
+          "unit": "CM"
+        },
+        "width": {
+          "type": "Quantity",
+          "amount": 60,
+          "unit": "CM"
+        },
+        "height": {
+          "type": "Quantity",
+          "amount": 50,
+          "unit": "CM"
+        },
+        "grossWeight": {
+          "type": "Quantity",
+          "amount": 31.25,
+          "unit": "KGS"
+        },
+        "netWeight": {
+          "type": "Quantity",
+          "amount": 28.125,
+          "unit": "KGS"
+        },
+        "volume": {
+          "type": "Quantity",
+          "amount": 0.3,
+          "unit": "CBM"
+        },
+        "items": [
+          {
+            "description": "Premium Wetsuit - 3/2mm",
+            "sku": "SURF-WS-004",
+            "quantity": 18,
+            "hsCode": "621220",
+            "originCountry": "AU",
+            "unitWeight": {
+              "type": "Quantity",
+              "amount": 1.5,
+              "unit": "KGS"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

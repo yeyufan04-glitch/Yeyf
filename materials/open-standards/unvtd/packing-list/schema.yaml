@@ -1,0 +1,581 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+title: Packing List
+description: >-
+  A detailed inventory of the contents of packages in a shipment, including item descriptions, quantities, weights, and
+  package marks for shipping and receiving purposes.
+type: object
+required:
+  - "@context"
+  - type
+  - credentialSchema
+  - validTo
+  - issuer
+  - credentialSubject
+properties:
+  "@context":
+    type: string
+    format: uri
+    description: Linked Data context for semantic interoperability
+    const: https://unvtd.unece.org/packing-list-context.json
+  type:
+    type: array
+    description: Document types
+    items:
+      type: string
+      enum:
+        - VerifiableCredential
+        - PackingList
+    minItems: 2
+    maxItems: 2
+    example:
+      - VerifiableCredential
+      - PackingList
+  credentialSchema:
+    type: object
+    description: Reference to the credential schema for validation
+    properties:
+      id:
+        type: string
+        format: uri
+        const: https://unvtd.unece.org/packing-list-schema.yaml
+        description: Public location of the schema
+      type:
+        type: string
+        const: JsonSchema
+        description: Schema type identifier
+    required:
+      - id
+      - type
+  id:
+    type: string
+    format: uri
+    description: Unique identifier for the credential
+    example: urn:uuid:pl-2025-surfpro-001
+  validFrom:
+    example: 2025-03-09:10:00
+    type: string
+    format: date-time
+    description: Credential validity start date
+  validTo:
+    example: 2026-03-09:10:00
+    type: string
+    format: date-time
+    description: Credential validity end date
+  issuer:
+    name: Issuer
+    description: Identifier of the party issuing the packing list (e.g., DID)
+    type: string
+    format: uri
+    example: did:web:surfpro.example.com
+  credentialSubject:
+    name: PackingList
+    description: Packing list details
+    type: object
+    properties:
+      issueDate:
+        example: "2025-03-09T00:00:00Z"
+        type: string
+        format: date-time
+        description: Date that a document was issued.
+      despatchDate:
+        example: "2025-03-11T00:00:00Z"
+        type: string
+        format: date-time
+        description: Date on which goods are despatched or consigned.
+      purchaseOrderNumber:
+        example: PO-2025-001
+        type: string
+        description: Identifier assigned by the buyer to an order.
+      contractNumber:
+        example: CTR-2025-SURF-001
+        type: string
+        description: Identifier of a contract concluded between parties.
+      invoiceNumber:
+        example: INV-2025-031-001
+        type: string
+        description: Reference number to identify an invoice.
+      transportContractNumber:
+        example: BKG123456789
+        type: string
+        description: Reference number to identify a document evidencing a transport contract.
+      buyer:
+        description: Party to which merchandise or services are sold.
+        type: object
+        properties:
+          type:
+            type: string
+            default: Party
+            enum:
+              - Party
+          id:
+            example: did:web:waveridersupplies.example.com
+            type: string
+            format: uri
+            description: A unique party identifier.
+          name:
+            example: Wave Rider Supplies, Inc
+            type: string
+            description: Trade party name.
+          postalAddress:
+            description: The postal address of the party.
+            type: object
+            properties:
+              type:
+                type: string
+                default: Address
+                enum:
+                  - Address
+              streetAddress:
+                example: 210 Ocean Road
+                type: string
+                description: The street component of the address
+              addressLocality:
+                example: Williamsburg
+                type: string
+                description: The city component of the address
+              addressRegion:
+                example: NSW
+                type: string
+                description: The state component of the address
+              postalCode:
+                example: "75002"
+                type: string
+                description: Postal code
+              addressCountry:
+                example: AU
+                type: string
+                description: Country.
+      seller:
+        description: Party selling merchandise or services to a buyer.
+        type: object
+        properties:
+          type:
+            type: string
+            default: Party
+            enum:
+              - Party
+          id:
+            example: did:web:surfpro.example.com
+            type: string
+            format: uri
+            description: A unique party identifier.
+          name:
+            example: SurfPro Manufacturing Inc.
+            type: string
+            description: Trade party name.
+          postalAddress:
+            description: The postal address of the party.
+            type: object
+            properties:
+              type:
+                type: string
+                default: Address
+                enum:
+                  - Address
+              streetAddress:
+                example: 150 Industrial Drive
+                type: string
+                description: The street component of the address
+              addressLocality:
+                example: Gold Coast
+                type: string
+                description: The city component of the address
+              addressRegion:
+                example: QLD
+                type: string
+                description: The state component of the address
+              postalCode:
+                example: "4217"
+                type: string
+                description: Postal code
+              addressCountry:
+                example: AU
+                type: string
+                description: Country.
+      consignee:
+        description: Party to which goods are consigned.
+        type: object
+        properties:
+          type:
+            type: string
+            default: Party
+            enum:
+              - Party
+          id:
+            example: did:web:waveridersupplies.example.com
+            type: string
+            format: uri
+            description: A unique party identifier.
+          name:
+            example: Wave Rider Supplies, Inc
+            type: string
+            description: Trade party name.
+          postalAddress:
+            description: The postal address of the party.
+            type: object
+            properties:
+              type:
+                type: string
+                default: Address
+                enum:
+                  - Address
+              streetAddress:
+                example: 210 Ocean Road
+                type: string
+                description: The street component of the address
+              addressLocality:
+                example: Williamsburg
+                type: string
+                description: The city component of the address
+              addressRegion:
+                example: NSW
+                type: string
+                description: The state component of the address
+              postalCode:
+                example: "75002"
+                type: string
+                description: Postal code
+              addressCountry:
+                example: AU
+                type: string
+                description: Country.
+      carrier:
+        description: Party providing the transport of goods between named points.
+        type: object
+        properties:
+          type:
+            type: string
+            default: Party
+            enum:
+              - Party
+          id:
+            example: did:web:pacificshipping.example.com
+            type: string
+            format: uri
+            description: A unique party identifier.
+          name:
+            example: Pacific Ocean Shipping Lines
+            type: string
+            description: Trade party name.
+          postalAddress:
+            description: The postal address of the party.
+            type: object
+            properties:
+              type:
+                type: string
+                default: Address
+                enum:
+                  - Address
+              streetAddress:
+                example: 88 Harbour Street
+                type: string
+                description: The street component of the address
+              addressLocality:
+                example: Sydney
+                type: string
+                description: The city component of the address
+              addressRegion:
+                example: NSW
+                type: string
+                description: The state component of the address
+              postalCode:
+                example: "2000"
+                type: string
+                description: Postal code
+              addressCountry:
+                example: AU
+                type: string
+                description: Country.
+      deliveryLocation:
+        description: Location to which a consignment is to be delivered.
+        type: object
+        properties:
+          name:
+            example: Wave Rider Supplies Warehouse
+            type: string
+            description: Location name
+          street:
+            example: 210 Ocean Road
+            type: string
+            description: Street address
+          city:
+            example: Williamsburg
+            type: string
+            description: City
+          state:
+            example: NSW
+            type: string
+            description: State
+          zip:
+            example: 75002
+            type: number
+            description: Postal code
+          country:
+            example: AU
+            type: string
+            description: Country
+      despatchLocation:
+        description: Place from which despatch is to take place.
+        type: object
+        properties:
+          name:
+            example: SurfPro Manufacturing Facility
+            type: string
+            description: Location name
+          street:
+            example: 150 Industrial Drive
+            type: string
+            description: Street address
+          city:
+            example: Gold Coast
+            type: string
+            description: City
+          state:
+            example: QLD
+            type: string
+            description: State
+          zip:
+            example: 4217
+            type: number
+            description: Postal code
+          country:
+            example: AU
+            type: string
+            description: Country
+      originCountry:
+        description: Country where the goods were produced.
+        type: object
+        properties:
+          country:
+            example: AU
+            type: string
+            description: ISO country code
+          name:
+            example: Australia
+            type: string
+            description: Country name
+      baseportUnloadingLocation:
+        description: The place or port at which the cargo is discharged.
+        type: object
+        properties:
+          name:
+            example: Port of Sydney
+            type: string
+            description: Location name
+          city:
+            example: Sydney
+            type: string
+            description: City
+          state:
+            example: NSW
+            type: string
+            description: State
+          country:
+            example: AU
+            type: string
+            description: Country
+          unlocode:
+            example: https://service.unece.org/trade/locode/au.htm#AUSYD
+            type: string
+            format: uri
+            description: UN/LOCODE identifier
+      totalGrossWeight:
+        description: Total gross weight of all packages.
+        type: object
+        properties:
+          amount:
+            example: 520
+            type: number
+            format: float
+            description: Weight amount
+          unit:
+            example: KGS
+            type: string
+            description: Weight unit
+      totalNetWeight:
+        description: Total net weight of all items.
+        type: object
+        properties:
+          amount:
+            example: 475
+            type: number
+            format: float
+            description: Weight amount
+          unit:
+            example: KGS
+            type: string
+            description: Weight unit
+      totalPackages:
+        example: 18
+        type: number
+        description: Total number of packages.
+      totalVolume:
+        description: Total volume of all packages.
+        type: object
+        properties:
+          amount:
+            example: 8.5
+            type: number
+            format: float
+            description: Volume amount
+          unit:
+            example: CBM
+            type: string
+            description: Volume unit (cubic meters)
+      handlingInstructions:
+        example: Handle with care. Keep dry. This side up.
+        type: string
+        description: Instructions on how packages should be handled.
+      transportTemperature:
+        example: Ambient temperature
+        type: string
+        description: Instructions regarding the temperature under which the cargo has to be transported.
+      conveyanceReferenceNumber:
+        example: VOYAGE-2025-AU-001
+        type: string
+        description: Identifier of a journey of a means of transport, such as a voyage or flight number (UID:8028).
+      vehicleRegistrationNumber:
+        example: IMO9876543
+        type: string
+        description: Identifier of the specific means of transport such as IMO number or vessel registration (UID:8213).
+      packages:
+        name: Packages
+        description: Details of individual packages
+        type: array
+        items:
+          type: object
+          properties:
+            packageNumber:
+              example: 1
+              type: number
+              description: Sequential package number
+            packageType:
+              example: CT
+              type: string
+              description: Code specifying the type of packaging (CT=Carton).
+            shippingMark:
+              example: SURFPRO/WRS/001
+              type: string
+              description: Marks and numbers on the package.
+            length:
+              description: Package length measurement.
+              type: object
+              properties:
+                amount:
+                  example: 250
+                  type: number
+                  description: Length value
+                unit:
+                  example: CM
+                  type: string
+                  description: Length unit
+            width:
+              description: Package width measurement.
+              type: object
+              properties:
+                amount:
+                  example: 50
+                  type: number
+                  description: Width value
+                unit:
+                  example: CM
+                  type: string
+                  description: Width unit
+            height:
+              description: Package height measurement.
+              type: object
+              properties:
+                amount:
+                  example: 40
+                  type: number
+                  description: Height value
+                unit:
+                  example: CM
+                  type: string
+                  description: Height unit
+            grossWeight:
+              description: Gross weight of the package.
+              type: object
+              properties:
+                amount:
+                  example: 40
+                  type: number
+                  format: float
+                  description: Weight amount
+                unit:
+                  example: KGS
+                  type: string
+                  description: Weight unit
+            netWeight:
+              description: Net weight of items in the package.
+              type: object
+              properties:
+                amount:
+                  example: 37.5
+                  type: number
+                  format: float
+                  description: Weight amount
+                unit:
+                  example: KGS
+                  type: string
+                  description: Weight unit
+            volume:
+              description: Volume of the package.
+              type: object
+              properties:
+                amount:
+                  example: 0.5
+                  type: number
+                  format: float
+                  description: Volume amount
+                unit:
+                  example: CBM
+                  type: string
+                  description: Volume unit
+            items:
+              name: Package Items
+              description: Items contained in this package
+              type: array
+              items:
+                type: object
+                properties:
+                  description:
+                    example: Professional Longboard - Ocean Series
+                    type: string
+                    description: Description of the item.
+                  sku:
+                    example: SURF-LB-001
+                    type: string
+                    description: Stock keeping unit identifier.
+                  quantity:
+                    example: 5
+                    type: number
+                    description: Number of units in this package.
+                  hsCode:
+                    example: "950630"
+                    type: string
+                    description: Harmonized System code.
+                  originCountry:
+                    example: AU
+                    type: string
+                    description: Country of origin.
+                  unitWeight:
+                    description: Weight per unit.
+                    type: object
+                    properties:
+                      amount:
+                        example: 7.5
+                        type: number
+                        format: float
+                        description: Weight amount
+                      unit:
+                        example: KGS
+                        type: string
+                        description: Weight unit
+                description: An item contained in the package.
+          description: Details of a specific package.
+    required:
+      - issueDate
+      - conveyanceReferenceNumber
+      - vehicleRegistrationNumber
+      - packages
