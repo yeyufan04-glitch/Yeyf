@@ -1,0 +1,24 @@
+{
+  "certificateId": "MZG-CERT-20260910-0001",
+  "caseId": "MZG-IMR-20260910-001",
+  "issuedAt": "2026-09-10T09:18:24+08:00",
+  "verdict": "HUMAN_REVIEW_REQUIRED",
+  "modelVersion": "MZG-DocAI-v0.9-mock",
+  "policyVersion": "POL-IMR-V1.3",
+  "evidenceSummary": {
+    "complete": 7,
+    "partial": 1,
+    "conflict": 1,
+    "missing": 1
+  },
+  "claimAudit": {
+    "verified": 2,
+    "supported": 1,
+    "unsupported": 1
+  },
+  "allowedActions": ["REQUEST_SUPPLEMENT", "HUMAN_REVIEW"],
+  "prohibitedActions": ["AUTO_REMIT", "AUTO_APPROVE"],
+  "integrityHash": "sha256:7f28a9e8c6d0c4a1e36f9e0d58211e95e3094d54f7a4b3dcb719646ccd210910",
+  "synthetic": true,
+  "disclaimer": "Competition demo certificate. It does not represent an ICBC decision or production audit record."
+}

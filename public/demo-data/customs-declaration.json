@@ -1,0 +1,21 @@
+{
+  "recordType": "SYNTHETIC_CUSTOMS_DECLARATION",
+  "synthetic": true,
+  "sourceSystem": "China International Trade Single Window Mock API",
+  "declarationNo": "223120260918001734",
+  "contractNo": "NW-WH-2026-0418",
+  "importer": "Wuhan Huayuan Electromechanical Equipment Co., Ltd.",
+  "exporter": "NordWerk Pumps GmbH",
+  "commodity": {
+    "description": "NW-80 Centrifugal Pumps",
+    "quantity": 800,
+    "unit": "PCS",
+    "declaredValue": 800000,
+    "currency": "USD",
+    "originCountry": "DE"
+  },
+  "portOfEntry": "Shanghai",
+  "releaseStatus": "RELEASED",
+  "releaseDate": "2026-09-08",
+  "disclaimer": "Competition demo synthetic data. Not connected to any customs system."
+}

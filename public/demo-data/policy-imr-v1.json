@@ -1,0 +1,20 @@
+{
+  "policyId": "POL-IMR-V1.3",
+  "title": "Import Remittance Evidence Requirement Template",
+  "synthetic": true,
+  "completeCriteria": [
+    "required business evidence exists",
+    "required independent source supports the fact",
+    "no unresolved critical cross-source conflict",
+    "critical event sequence satisfies the demo template"
+  ],
+  "humanReviewTriggers": [
+    "critical fact is CONFLICT",
+    "critical explanatory claim is UNSUPPORTED",
+    "task reliability lower bound is below demo threshold",
+    "requested action is not eligible for automatic execution"
+  ],
+  "allowedActions": ["REQUEST_SUPPLEMENT", "HUMAN_REVIEW"],
+  "prohibitedActions": ["AUTO_REMIT", "AUTO_APPROVE"],
+  "disclaimer": "Competition demo policy only. Not an ICBC policy or regulatory rule."
+}

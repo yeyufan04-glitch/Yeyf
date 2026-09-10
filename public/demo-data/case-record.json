@@ -1,0 +1,18 @@
+{
+  "caseId": "MZG-IMR-20260910-001",
+  "scenario": "Import goods trade cross-border remittance",
+  "synthetic": true,
+  "applicant": "Wuhan Huayuan Electromechanical Equipment Co., Ltd.",
+  "beneficiary": "NordWerk Pumps GmbH",
+  "amount": { "value": 800000, "currency": "USD" },
+  "coreConflict": {
+    "fact": "currentShipmentQuantity",
+    "customerControlledDocuments": "1000 PCS",
+    "independentEvidence": "800 PCS",
+    "evidenceState": "CONFLICT"
+  },
+  "humanReviewQuestions": [
+    "Is this payment for an allowed partial shipment of 800 units?",
+    "Should the customer correct the invoice and packing list and provide a partial-performance statement?"
+  ]
+}

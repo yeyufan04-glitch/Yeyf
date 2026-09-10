@@ -1,0 +1,15 @@
+{
+  "recordType": "SYNTHETIC_BANK_PAYMENT_INSTRUCTION",
+  "synthetic": true,
+  "sourceSystem": "ICBC Core Banking Mock API",
+  "instructionId": "PAY-IMR-20260910-7841",
+  "applicant": "Wuhan Huayuan Electromechanical Equipment Co., Ltd.",
+  "beneficiary": "NordWerk Pumps GmbH",
+  "beneficiaryBankBic": "DEUTDEFFXXX",
+  "amount": 800000,
+  "currency": "USD",
+  "contractNo": "NW-WH-2026-0418",
+  "purpose": "Payment for 800 NW-80 centrifugal pumps",
+  "executionStatus": "HELD_FOR_HUMAN_REVIEW",
+  "disclaimer": "Competition demo synthetic data. Not connected to any bank system."
+}
