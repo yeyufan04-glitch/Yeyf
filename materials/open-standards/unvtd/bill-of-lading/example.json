@@ -1,0 +1,235 @@
+{
+  "@context": "https://unvtd.unece.org/bill-of-lading-context.json",
+  "type": [
+    "VerifiableCredential",
+    "BillOfLading"
+  ],
+  "credentialSchema": {
+    "id": "https://unvtd.unece.org/bill-of-lading-schema.yaml",
+    "type": "JsonSchema"
+  },
+  "id": "urn:uuid:bol-2025-pacific-001",
+  "validFrom": "2025-03-11T10:00:00Z",
+  "validTo": "2026-03-11T10:00:00Z",
+  "issuer": "did:web:pacificshipping.example.com",
+  "credentialSubject": {
+    "billOfLadingNumber": "POSL-2025-001234",
+    "documentIdentifier": "BL-2025-AU-001234",
+    "bookingReferenceNumber": "BKG123456789",
+    "issueDate": "2025-03-11T00:00:00Z",
+    "consignmentLoadingDate": "2025-03-11T00:00:00Z",
+    "estimatedTimeOfDeparture": "2025-03-12T08:00:00Z",
+    "estimatedTimeOfArrival": "2025-03-13T14:00:00Z",
+    "consignor": {
+      "type": "Party",
+      "id": "did:web:surfpro.example.com",
+      "name": "SurfPro Manufacturing Inc.",
+      "postalAddress": {
+        "type": "Address",
+        "streetAddress": "150 Industrial Drive",
+        "addressLocality": "Gold Coast",
+        "addressRegion": "QLD",
+        "postalCode": "4217",
+        "addressCountry": "AU"
+      }
+    },
+    "consignee": {
+      "type": "Party",
+      "id": "did:web:waveridersupplies.example.com",
+      "name": "Wave Rider Supplies, Inc",
+      "postalAddress": {
+        "type": "Address",
+        "streetAddress": "210 Ocean Road",
+        "addressLocality": "Williamsburg",
+        "addressRegion": "NSW",
+        "postalCode": "75002",
+        "addressCountry": "AU"
+      }
+    },
+    "notifyParty": {
+      "type": "Party",
+      "id": "did:web:waveridersupplies.example.com",
+      "name": "Wave Rider Supplies, Inc",
+      "postalAddress": {
+        "type": "Address",
+        "streetAddress": "210 Ocean Road",
+        "addressLocality": "Williamsburg",
+        "addressRegion": "NSW",
+        "postalCode": "75002",
+        "addressCountry": "AU"
+      }
+    },
+    "carrier": {
+      "type": "Party",
+      "id": "did:web:pacificshipping.example.com",
+      "name": "Pacific Ocean Shipping Lines",
+      "postalAddress": {
+        "type": "Address",
+        "streetAddress": "88 Harbour Street",
+        "addressLocality": "Sydney",
+        "addressRegion": "NSW",
+        "postalCode": "2000",
+        "addressCountry": "AU"
+      }
+    },
+    "freightPayer": {
+      "type": "Party",
+      "id": "did:web:surfpro.example.com",
+      "name": "SurfPro Manufacturing Inc.",
+      "postalAddress": {
+        "type": "Address",
+        "streetAddress": "150 Industrial Drive",
+        "addressLocality": "Gold Coast",
+        "addressRegion": "QLD",
+        "postalCode": "4217",
+        "addressCountry": "AU"
+      }
+    },
+    "originalLoadingLocation": {
+      "name": "Port of Gold Coast",
+      "addressLocality": "Gold Coast",
+      "addressRegion": "QLD",
+      "addressCountry": "AU",
+      "unLocode": "https://service.unece.org/trade/locode/au.htm#AUGOL"
+    },
+    "baseportUnloadingLocation": {
+      "name": "Port of Sydney",
+      "addressLocality": "Sydney",
+      "addressRegion": "NSW",
+      "addressCountry": "AU",
+      "unLocode": "https://service.unece.org/trade/locode/au.htm#AUSYD"
+    },
+    "deliveryLocation": {
+      "name": "Wave Rider Supplies Warehouse",
+      "streetAddress": "210 Ocean Road",
+      "addressLocality": "Williamsburg",
+      "addressRegion": "NSW",
+      "postalCode": "75002",
+      "addressCountry": "AU"
+    },
+    "placeOfDeparture": {
+      "name": "Port of Gold Coast",
+      "addressLocality": "Gold Coast",
+      "addressRegion": "QLD",
+      "addressCountry": "AU",
+      "unLocode": "https://service.unece.org/trade/locode/au.htm#AUGOL"
+    },
+    "arrivalLocation": {
+      "name": "Port of Sydney",
+      "addressLocality": "Sydney",
+      "addressRegion": "NSW",
+      "addressCountry": "AU",
+      "unLocode": "https://service.unece.org/trade/locode/au.htm#AUSYD"
+    },
+    "paymentLocation": {
+      "addressLocality": "Gold Coast",
+      "addressRegion": "QLD",
+      "addressCountry": "AU"
+    },
+    "placeOfIssue": {
+      "addressLocality": "Sydney",
+      "addressRegion": "NSW",
+      "addressCountry": "AU"
+    },
+    "conveyanceReferenceNumber": "VOYAGE-2025-AU-001",
+    "transportMeansIdentifier": "PACIFIC VOYAGER",
+    "transportMeansRegistration": "IMO9876543",
+    "containerSizeAndType": "22G1",
+    "fullOrEmptyContainer": "5",
+    "transportEquipmentIdentifier": "POSU1234567",
+    "sealIdentifier": "SEAL123456",
+    "grossWeight": {
+      "type": "Quantity",
+      "amount": 520,
+      "unit": "KGS"
+    },
+    "volume": {
+      "type": "Quantity",
+      "amount": 8.5,
+      "unit": "CBM"
+    },
+    "numberOfPackages": 18,
+    "descriptionOfGoods": "Surfboards, fins and wetsuits for water sports retail",
+    "consignmentSummaryDescription": "Sports equipment - surfing products",
+    "shippingMarks": "SURFPRO/WRS/001-018",
+    "transportContractConditions": "Subject to carrier's standard terms and conditions",
+    "prepaidAmount": {
+      "type": "MonetaryAmount",
+      "amount": 2500,
+      "currency": "USD"
+    },
+    "collectCharges": {
+      "type": "MonetaryAmount",
+      "amount": 0,
+      "currency": "USD"
+    },
+    "contractNumber": "CTR-2025-SURF-001",
+    "ucr": "AU2025SURF001234",
+    "goods": [
+      {
+        "description": "Professional Longboard - Ocean Series",
+        "hsCode": "950630",
+        "quantity": {
+          "type": "Quantity",
+          "amount": 25,
+          "unit": "Units"
+        },
+        "grossWeight": {
+          "type": "Quantity",
+          "amount": 200,
+          "unit": "KGS"
+        },
+        "packages": 5,
+        "packagingType": "CT"
+      },
+      {
+        "description": "Performance Shortboard - Pro Series",
+        "hsCode": "950630",
+        "quantity": {
+          "type": "Quantity",
+          "amount": 50,
+          "unit": "Units"
+        },
+        "grossWeight": {
+          "type": "Quantity",
+          "amount": 165,
+          "unit": "KGS"
+        },
+        "packages": 5,
+        "packagingType": "CT"
+      },
+      {
+        "description": "Surfboard Fin Set - Thruster",
+        "hsCode": "950630",
+        "quantity": {
+          "type": "Quantity",
+          "amount": 100,
+          "unit": "Units"
+        },
+        "grossWeight": {
+          "type": "Quantity",
+          "amount": 30,
+          "unit": "KGS"
+        },
+        "packages": 4,
+        "packagingType": "CT"
+      },
+      {
+        "description": "Premium Wetsuit - 3/2mm",
+        "hsCode": "621220",
+        "quantity": {
+          "type": "Quantity",
+          "amount": 75,
+          "unit": "Units"
+        },
+        "grossWeight": {
+          "type": "Quantity",
+          "amount": 125,
+          "unit": "KGS"
+        },
+        "packages": 4,
+        "packagingType": "CT"
+      }
+    ]
+  }
+}
