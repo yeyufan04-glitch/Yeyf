@@ -1,0 +1,221 @@
+{
+  "@context": "https://unvtd.unece.org/certificate-of-origin-context.json",
+  "type": [
+    "VerifiableCredential",
+    "CertificateOfOrigin"
+  ],
+  "credentialSchema": {
+    "id": "https://unvtd.unece.org/certificate-of-origin-schema.yaml",
+    "type": "JsonSchema"
+  },
+  "id": "urn:uuid:coo-2025-au-001234",
+  "validFrom": "2025-03-08T10:00:00Z",
+  "validTo": "2026-03-08T10:00:00Z",
+  "issuer": "did:web:chamberofcommerce.example.com",
+  "credentialSubject": {
+    "certificateNumber": "COO-2025-AU-001234",
+    "issueDate": "2025-03-08T00:00:00Z",
+    "exporter": {
+      "type": "Party",
+      "id": "did:web:surfpro.example.com",
+      "name": "SurfPro Manufacturing Inc.",
+      "postalAddress": {
+        "type": "Address",
+        "streetAddress": "150 Industrial Drive",
+        "addressLocality": "Gold Coast",
+        "addressRegion": "QLD",
+        "postalCode": "4217",
+        "addressCountry": "AU"
+      }
+    },
+    "importer": {
+      "type": "Party",
+      "id": "did:web:waveridersupplies.example.com",
+      "name": "Wave Rider Supplies, Inc",
+      "postalAddress": {
+        "type": "Address",
+        "streetAddress": "210 Ocean Road",
+        "addressLocality": "Williamsburg",
+        "addressRegion": "NSW",
+        "postalCode": "75002",
+        "addressCountry": "AU"
+      }
+    },
+    "consignee": {
+      "type": "Party",
+      "id": "did:web:waveridersupplies.example.com",
+      "name": "Wave Rider Supplies, Inc",
+      "postalAddress": {
+        "type": "Address",
+        "streetAddress": "210 Ocean Road",
+        "addressLocality": "Williamsburg",
+        "addressRegion": "NSW",
+        "postalCode": "75002",
+        "addressCountry": "AU"
+      }
+    },
+    "seller": {
+      "type": "Party",
+      "id": "did:web:surfpro.example.com",
+      "name": "SurfPro Manufacturing Inc.",
+      "postalAddress": {
+        "type": "Address",
+        "streetAddress": "150 Industrial Drive",
+        "addressLocality": "Gold Coast",
+        "addressRegion": "QLD",
+        "postalCode": "4217",
+        "addressCountry": "AU"
+      }
+    },
+    "placeOfIssue": {
+      "addressLocality": "Barton",
+      "addressRegion": "ACT",
+      "addressCountry": "AU"
+    },
+    "originCountry": {
+      "addressCountry": "AU",
+      "name": "Australia"
+    },
+    "exportationCountry": {
+      "addressCountry": "AU",
+      "name": "Australia"
+    },
+    "destinationCountry": {
+      "addressCountry": "AU",
+      "name": "Australia"
+    },
+    "originalLoadingLocation": {
+      "name": "Port of Gold Coast",
+      "addressLocality": "Gold Coast",
+      "addressRegion": "QLD",
+      "addressCountry": "AU",
+      "unLocode": "https://service.unece.org/trade/locode/au.htm#AUGOL"
+    },
+    "baseportUnloadingLocation": {
+      "name": "Port of Sydney",
+      "addressLocality": "Sydney",
+      "addressRegion": "NSW",
+      "addressCountry": "AU",
+      "unLocode": "https://service.unece.org/trade/locode/au.htm#AUSYD"
+    },
+    "transportContractNumber": "BKG123456789",
+    "invoiceNumber": "INV-2025-031-001",
+    "contractNumber": "CTR-2025-SURF-001",
+    "issuingAuthority": {
+      "name": "Australian Chamber of Commerce and Industry",
+      "streetAddress": "24 Brisbane Avenue",
+      "addressLocality": "Barton",
+      "addressRegion": "ACT",
+      "addressCountry": "AU"
+    },
+    "competentAuthority": {
+      "name": "Department of Foreign Affairs and Trade",
+      "addressCountry": "AU"
+    },
+    "numberOfPackages": 18,
+    "certification": "The undersigned hereby certifies, to the best of our knowledge and belief, that the goods listed in this certificate originate in Australia",
+    "authentication": "Certified and stamped by the Australian Chamber of Commerce and Industry",
+    "goods": [
+      {
+        "description": "Professional Longboard - Ocean Series, 9'6\" length",
+        "hsCode": "950630",
+        "quantity": {
+          "type": "Quantity",
+          "amount": 25,
+          "unit": "Units"
+        },
+        "netWeight": {
+          "type": "Quantity",
+          "amount": 187.5,
+          "unit": "KGS"
+        },
+        "grossWeight": {
+          "type": "Quantity",
+          "amount": 200,
+          "unit": "KGS"
+        },
+        "value": {
+          "type": "MonetaryAmount",
+          "amount": 18750,
+          "currency": "USD"
+        },
+        "countryOfOrigin": "AU"
+      },
+      {
+        "description": "Performance Shortboard - Pro Series, 6'2\" length",
+        "hsCode": "950630",
+        "quantity": {
+          "type": "Quantity",
+          "amount": 50,
+          "unit": "Units"
+        },
+        "netWeight": {
+          "type": "Quantity",
+          "amount": 150,
+          "unit": "KGS"
+        },
+        "grossWeight": {
+          "type": "Quantity",
+          "amount": 165,
+          "unit": "KGS"
+        },
+        "value": {
+          "type": "MonetaryAmount",
+          "amount": 32500,
+          "currency": "USD"
+        },
+        "countryOfOrigin": "AU"
+      },
+      {
+        "description": "Surfboard Fin Set - Thruster",
+        "hsCode": "950630",
+        "quantity": {
+          "type": "Quantity",
+          "amount": 100,
+          "unit": "Units"
+        },
+        "netWeight": {
+          "type": "Quantity",
+          "amount": 25,
+          "unit": "KGS"
+        },
+        "grossWeight": {
+          "type": "Quantity",
+          "amount": 30,
+          "unit": "KGS"
+        },
+        "value": {
+          "type": "MonetaryAmount",
+          "amount": 8500,
+          "currency": "USD"
+        },
+        "countryOfOrigin": "AU"
+      },
+      {
+        "description": "Premium Wetsuit - 3/2mm",
+        "hsCode": "621220",
+        "quantity": {
+          "type": "Quantity",
+          "amount": 75,
+          "unit": "Units"
+        },
+        "netWeight": {
+          "type": "Quantity",
+          "amount": 112.5,
+          "unit": "KGS"
+        },
+        "grossWeight": {
+          "type": "Quantity",
+          "amount": 125,
+          "unit": "KGS"
+        },
+        "value": {
+          "type": "MonetaryAmount",
+          "amount": 13500,
+          "currency": "USD"
+        },
+        "countryOfOrigin": "AU"
+      }
+    ]
+  }
+}
