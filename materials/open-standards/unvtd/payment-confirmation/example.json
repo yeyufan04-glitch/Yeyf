@@ -1,0 +1,59 @@
+{
+  "@context": "https://unvtd.unece.org/payment-confirmation-context.json",
+  "type": [
+    "VerifiableCredential",
+    "PaymentConfirmation"
+  ],
+  "credentialSchema": {
+    "id": "https://unvtd.unece.org/payment-confirmation-schema.yaml",
+    "type": "JsonSchema"
+  },
+  "id": "urn:uuid:pc-2025-au-001",
+  "validFrom": "2025-03-16T00:00:00.000Z",
+  "validTo": "2026-03-16T00:00:00.000Z",
+  "issuer": "did:web:pacifictradebank.example.com",
+  "credentialSubject": {
+    "invoiceNumber": "INV-2025-031-001",
+    "paymentDueDate": "2025-03-16T00:00:00Z",
+    "invoicee": {
+      "id": "did:web:waveridersupplies.example.com",
+      "name": "Wave Rider Supplies, Inc",
+      "type": "Party",
+      "postalAddress": {
+        "type": "Address",
+        "streetAddress": "210 Ocean Road",
+        "addressLocality": "Williamsburg",
+        "addressRegion": "VA",
+        "postalCode": "23185",
+        "addressCountry": "US"
+      }
+    },
+    "payee": {
+      "id": "did:web:surfpro.example.com",
+      "name": "SurfPro Manufacturing Inc.",
+      "type": "Party",
+      "postalAddress": {
+        "type": "Address",
+        "streetAddress": "150 Industrial Drive",
+        "addressLocality": "Gold Coast",
+        "addressRegion": "QLD",
+        "postalCode": "4217",
+        "addressCountry": "AU"
+      }
+    },
+    "accountHolder": {
+      "id": "did:web:surfpro.example.com",
+      "name": "SurfPro Manufacturing Inc.",
+      "type": "Party",
+      "postalAddress": {
+        "type": "Address",
+        "addressCountry": "AU"
+      }
+    },
+    "paymentMethod": "Documentary credit",
+    "monetaryAmount": {
+      "amount": 45000,
+      "currency": "USD"
+    }
+  }
+}

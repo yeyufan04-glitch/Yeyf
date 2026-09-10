@@ -1,0 +1,231 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+title: Payment Confirmation
+description: >-
+  A document issued by a bank or financial institution confirming that a payment has been made or authorised in
+  settlement of a commercial transaction.
+type: object
+required:
+  - "@context"
+  - type
+  - credentialSchema
+  - issuer
+  - credentialSubject
+properties:
+  "@context":
+    type: string
+    format: uri
+    description: Linked Data context for semantic interoperability
+    const: https://unvtd.unece.org/payment-confirmation-context.json
+  type:
+    type: array
+    description: Credential types
+    items:
+      type: string
+      enum:
+        - VerifiableCredential
+        - PaymentConfirmation
+    minItems: 2
+    maxItems: 2
+    example:
+      - VerifiableCredential
+      - PaymentConfirmation
+  credentialSchema:
+    type: object
+    description: Reference to the credential schema for validation
+    properties:
+      id:
+        type: string
+        format: uri
+        const: https://unvtd.unece.org/payment-confirmation-schema.yaml
+        description: Public location of the schema
+      type:
+        type: string
+        const: JsonSchema
+        description: Schema type identifier
+    required:
+      - id
+      - type
+  id:
+    type: string
+    format: uri
+    description: Unique identifier for the credential
+    example: urn:uuid:pc-2025-au-001
+  validFrom:
+    example: 2025-03-16T00:00:00.000Z
+    type: string
+    format: date-time
+    description: Credential validity start date
+  validTo:
+    example: 2026-03-16T00:00:00.000Z
+    type: string
+    format: date-time
+    description: Credential validity end date
+  issuer:
+    description: Identifier of the bank or financial institution issuing the payment confirmation (e.g., DID)
+    type: string
+    format: uri
+    example: did:web:pacifictradebank.example.com
+  credentialSubject:
+    name: PaymentConfirmation
+    description: Payment confirmation details
+    type: object
+    required:
+      - invoiceNumber
+      - invoicee
+      - payee
+      - accountHolder
+      - monetaryAmount
+    properties:
+      invoiceNumber:
+        example: INV-2025-031-001
+        type: string
+        description: Reference number of the commercial invoice being settled.
+      paymentDueDate:
+        example: "2025-03-16T00:00:00Z"
+        type: string
+        format: date-time
+        description: Date when the payment amount was or should be made available to the payee.
+      invoicee:
+        description: Party to whom the invoice is addressed (typically the buyer).
+        type: object
+        properties:
+          type:
+            type: string
+            default: Party
+            enum:
+              - Party
+          id:
+            example: did:web:waveridersupplies.example.com
+            type: string
+            format: uri
+            description: A unique party identifier.
+          name:
+            example: Wave Rider Supplies, Inc
+            type: string
+            description: Trade party name.
+          postalAddress:
+            description: The postal address of the party.
+            type: object
+            properties:
+              type:
+                type: string
+                default: Address
+                enum:
+                  - Address
+              streetAddress:
+                example: 210 Ocean Road
+                type: string
+                description: The street component of the address.
+              addressLocality:
+                example: Williamsburg
+                type: string
+                description: The city component of the address.
+              addressRegion:
+                example: VA
+                type: string
+                description: The state component of the address.
+              postalCode:
+                example: "23185"
+                type: string
+                description: Postal code.
+              addressCountry:
+                example: US
+                type: string
+                description: Country.
+      payee:
+        description: Party to whom payment is made (typically the seller/exporter).
+        type: object
+        properties:
+          type:
+            type: string
+            default: Party
+            enum:
+              - Party
+          id:
+            example: did:web:surfpro.example.com
+            type: string
+            format: uri
+            description: A unique party identifier.
+          name:
+            example: SurfPro Manufacturing Inc.
+            type: string
+            description: Trade party name.
+          postalAddress:
+            description: The postal address of the party.
+            type: object
+            properties:
+              type:
+                type: string
+                default: Address
+                enum:
+                  - Address
+              streetAddress:
+                example: 150 Industrial Drive
+                type: string
+                description: The street component of the address.
+              addressLocality:
+                example: Gold Coast
+                type: string
+                description: The city component of the address.
+              addressRegion:
+                example: QLD
+                type: string
+                description: The state component of the address.
+              postalCode:
+                example: "4217"
+                type: string
+                description: Postal code.
+              addressCountry:
+                example: AU
+                type: string
+                description: Country.
+      accountHolder:
+        description: Party holding the bank account to which payment is credited.
+        type: object
+        properties:
+          type:
+            type: string
+            default: Party
+            enum:
+              - Party
+          id:
+            example: did:web:surfpro.example.com
+            type: string
+            format: uri
+            description: A unique party identifier.
+          name:
+            example: SurfPro Manufacturing Inc.
+            type: string
+            description: Trade party name.
+          postalAddress:
+            description: The postal address of the party.
+            type: object
+            properties:
+              type:
+                type: string
+                default: Address
+                enum:
+                  - Address
+              addressCountry:
+                example: AU
+                type: string
+                description: Country.
+      paymentMethod:
+        example: Documentary credit
+        type: string
+        description: Code or description specifying the method by which payment is made.
+      monetaryAmount:
+        description: The monetary amount confirmed as paid or authorised.
+        type: object
+        properties:
+          amount:
+            example: 45000
+            type: number
+            format: float
+            description: The payment amount.
+          currency:
+            example: USD
+            type: string
+            minLength: 3
+            maxLength: 3
+            description: ISO 4217 three-letter currency code.
