@@ -1,0 +1,402 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+title: Letter of Credit
+description: >-
+  A financial instrument issued by a bank on behalf of a buyer guaranteeing payment to a seller upon presentation of
+  specified documents conforming to the terms and conditions of the credit.
+type: object
+required:
+  - "@context"
+  - type
+  - credentialSchema
+  - issuer
+  - credentialSubject
+properties:
+  "@context":
+    type: string
+    format: uri
+    description: Linked Data context for semantic interoperability
+    const: https://unvtd.unece.org/letter-of-credit-context.json
+  type:
+    type: array
+    description: Credential types
+    items:
+      type: string
+      enum:
+        - VerifiableCredential
+        - LetterOfCredit
+    minItems: 2
+    maxItems: 2
+    example:
+      - VerifiableCredential
+      - LetterOfCredit
+  credentialSchema:
+    type: object
+    description: Reference to the credential schema for validation
+    properties:
+      id:
+        type: string
+        format: uri
+        const: https://unvtd.unece.org/letter-of-credit-schema.yaml
+        description: Public location of the schema
+      type:
+        type: string
+        const: JsonSchema
+        description: Schema type identifier
+    required:
+      - id
+      - type
+  id:
+    type: string
+    format: uri
+    description: Unique identifier for the credential
+    example: urn:uuid:lc-2025-au-456789
+  validFrom:
+    example: 2025-03-01T00:00:00.000Z
+    type: string
+    format: date-time
+    description: Credential validity start date
+  validTo:
+    example: 2025-07-31T00:00:00.000Z
+    type: string
+    format: date-time
+    description: Credential validity end date
+  issuer:
+    description: Identifier of the issuing bank (e.g., DID)
+    type: string
+    format: uri
+    example: did:web:globaltradebank.example.com
+  credentialSubject:
+    name: LetterOfCredit
+    description: Letter of credit details
+    type: object
+    required:
+      - documentaryCreditIdentifier
+      - documentaryCreditIssueDate
+      - documentaryCreditEffectiveEndDate
+      - documentaryCreditApplicant
+      - documentaryCreditAvailableBank
+      - documentaryCreditBeneficiary
+      - documentaryCreditAmount
+    properties:
+      documentaryCreditIdentifier:
+        example: LC-2025-AU-456789
+        type: string
+        description: Reference number to identify a documentary credit (letter of credit).
+      documentaryCreditIssueDate:
+        example: "2025-03-01T00:00:00Z"
+        type: string
+        format: date-time
+        description: Issue date of a documentary credit.
+      documentaryCreditEffectiveEndDate:
+        example: "2025-07-31T00:00:00Z"
+        type: string
+        format: date-time
+        description: Date on which the validity of a documentary credit expires.
+      latestShipmentDate:
+        example: "2025-06-30T00:00:00Z"
+        type: string
+        format: date-time
+        description: Latest date by which the goods must be shipped under the documentary credit.
+      documentaryCreditApplicant:
+        description: Party on whose behalf the documentary credit is issued (typically the buyer/importer).
+        type: object
+        properties:
+          type:
+            type: string
+            default: Party
+            enum:
+              - Party
+          id:
+            example: did:web:waveridersupplies.example.com
+            type: string
+            format: uri
+            description: A unique party identifier.
+          name:
+            example: Wave Rider Supplies, Inc
+            type: string
+            description: Trade party name.
+          postalAddress:
+            description: The postal address of the party.
+            type: object
+            properties:
+              type:
+                type: string
+                default: Address
+                enum:
+                  - Address
+              streetAddress:
+                example: 210 Ocean Road
+                type: string
+                description: The street component of the address.
+              addressLocality:
+                example: Williamsburg
+                type: string
+                description: The city component of the address.
+              addressRegion:
+                example: VA
+                type: string
+                description: The state component of the address.
+              postalCode:
+                example: "23185"
+                type: string
+                description: Postal code.
+              addressCountry:
+                example: US
+                type: string
+                description: Country.
+      documentaryCreditApplicantAgentBank:
+        description: Bank acting as agent for the documentary credit applicant.
+        type: object
+        properties:
+          type:
+            type: string
+            default: Party
+            enum:
+              - Party
+          id:
+            example: did:web:globaltradebank.example.com
+            type: string
+            format: uri
+            description: A unique party identifier.
+          name:
+            example: Global Trade Finance Bank
+            type: string
+            description: Trade party name.
+          postalAddress:
+            description: The postal address of the party.
+            type: object
+            properties:
+              type:
+                type: string
+                default: Address
+                enum:
+                  - Address
+              addressCountry:
+                example: US
+                type: string
+                description: Country.
+      documentaryCreditAvailableBank:
+        description: Bank with which the documentary credit is available (nominated or confirming bank).
+        type: object
+        properties:
+          type:
+            type: string
+            default: Party
+            enum:
+              - Party
+          id:
+            example: did:web:pacifictradebank.example.com
+            type: string
+            format: uri
+            description: A unique party identifier.
+          name:
+            example: Pacific Trade Bank Ltd
+            type: string
+            description: Trade party name.
+          postalAddress:
+            description: The postal address of the party.
+            type: object
+            properties:
+              type:
+                type: string
+                default: Address
+                enum:
+                  - Address
+              addressCountry:
+                example: AU
+                type: string
+                description: Country.
+      documentaryCreditBeneficiary:
+        description: Party in whose favour the documentary credit is issued (typically the seller/exporter).
+        type: object
+        properties:
+          type:
+            type: string
+            default: Party
+            enum:
+              - Party
+          id:
+            example: did:web:surfproexports.example.com
+            type: string
+            format: uri
+            description: A unique party identifier.
+          name:
+            example: SurfPro Exports Pty Ltd
+            type: string
+            description: Trade party name.
+          postalAddress:
+            description: The postal address of the party.
+            type: object
+            properties:
+              type:
+                type: string
+                default: Address
+                enum:
+                  - Address
+              streetAddress:
+                example: 12 Harbour Drive
+                type: string
+                description: The street component of the address.
+              addressLocality:
+                example: Sydney
+                type: string
+                description: The city component of the address.
+              addressRegion:
+                example: NSW
+                type: string
+                description: The state component of the address.
+              postalCode:
+                example: "2000"
+                type: string
+                description: Postal code.
+              addressCountry:
+                example: AU
+                type: string
+                description: Country.
+      documentaryCreditDrawee:
+        description: Party on whom draft(s) drawn under the documentary credit are to be drawn.
+        type: object
+        properties:
+          type:
+            type: string
+            default: Party
+            enum:
+              - Party
+          id:
+            example: did:web:globaltradebank.example.com
+            type: string
+            format: uri
+            description: A unique party identifier.
+          name:
+            example: Global Trade Finance Bank
+            type: string
+            description: Trade party name.
+          postalAddress:
+            description: The postal address of the party.
+            type: object
+            properties:
+              type:
+                type: string
+                default: Address
+                enum:
+                  - Address
+              addressCountry:
+                example: US
+                type: string
+                description: Country.
+      documentaryCreditReimbursingBank:
+        description: Bank authorised to reimburse the nominated bank upon receipt of a complying claim.
+        type: object
+        properties:
+          type:
+            type: string
+            default: Party
+            enum:
+              - Party
+          id:
+            example: did:web:globalreimbursebank.example.com
+            type: string
+            format: uri
+            description: A unique party identifier.
+          name:
+            example: Global Reimbursement Bank
+            type: string
+            description: Trade party name.
+          postalAddress:
+            description: The postal address of the party.
+            type: object
+            properties:
+              type:
+                type: string
+                default: Address
+                enum:
+                  - Address
+              addressCountry:
+                example: US
+                type: string
+                description: Country.
+      documentaryCreditAmount:
+        description: Maximum amount available under the documentary credit.
+        type: object
+        properties:
+          amount:
+            example: 45000
+            type: number
+            format: float
+            description: The credit amount.
+          currency:
+            example: USD
+            type: string
+            minLength: 3
+            maxLength: 3
+            description: ISO 4217 three-letter currency code.
+      originalLoadingLocation:
+        description: Port from which the goods are to be shipped under the documentary credit.
+        type: object
+        properties:
+          name:
+            example: Port of Sydney
+            type: string
+            description: Location name.
+          city:
+            example: Sydney
+            type: string
+            description: City.
+          country:
+            example: AU
+            type: string
+            description: Country.
+          unlocode:
+            example: https://service.unece.org/trade/locode/au.htm#AUSYD
+            type: string
+            format: uri
+            description: UN/LOCODE identifier.
+      portOfDischarge:
+        description: Port at which the goods are to be discharged.
+        type: object
+        properties:
+          name:
+            example: Port of Los Angeles
+            type: string
+            description: Location name.
+          city:
+            example: Los Angeles
+            type: string
+            description: City.
+          country:
+            example: US
+            type: string
+            description: Country.
+          unlocode:
+            example: https://service.unece.org/trade/locode/us.htm#USLAX
+            type: string
+            format: uri
+            description: UN/LOCODE identifier.
+      placeOfDelivery:
+        description: Final place to which the goods are to be delivered under the documentary credit.
+        type: object
+        properties:
+          name:
+            example: Wave Rider Supplies Warehouse
+            type: string
+            description: Location name.
+          city:
+            example: Williamsburg
+            type: string
+            description: City.
+          state:
+            example: VA
+            type: string
+            description: State.
+          country:
+            example: US
+            type: string
+            description: Country.
+      shipmentFrom:
+        example: Australia
+        type: string
+        description: Country or geographic area from which the goods must be dispatched.
+      descriptionOfGoods:
+        example: Surfboards, fins and wetsuits for water sports retail
+        type: string
+        description: Plain language description of the goods covered by the documentary credit.

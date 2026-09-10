@@ -1,0 +1,107 @@
+{
+  "@context": "https://unvtd.unece.org/letter-of-credit-context.json",
+  "type": [
+    "VerifiableCredential",
+    "LetterOfCredit"
+  ],
+  "credentialSchema": {
+    "id": "https://unvtd.unece.org/letter-of-credit-schema.yaml",
+    "type": "JsonSchema"
+  },
+  "id": "urn:uuid:lc-2025-au-456789",
+  "validFrom": "2025-03-01T00:00:00.000Z",
+  "validTo": "2025-07-31T00:00:00.000Z",
+  "issuer": "did:web:globaltradebank.example.com",
+  "credentialSubject": {
+    "documentaryCreditIdentifier": "LC-2025-AU-456789",
+    "documentaryCreditIssueDate": "2025-03-01T00:00:00Z",
+    "documentaryCreditEffectiveEndDate": "2025-07-31T00:00:00Z",
+    "latestShipmentDate": "2025-06-30T00:00:00Z",
+    "documentaryCreditApplicant": {
+      "id": "did:web:waveridersupplies.example.com",
+      "name": "Wave Rider Supplies, Inc",
+      "type": "Party",
+      "postalAddress": {
+        "type": "Address",
+        "streetAddress": "210 Ocean Road",
+        "addressLocality": "Williamsburg",
+        "addressRegion": "VA",
+        "postalCode": "23185",
+        "addressCountry": "US"
+      }
+    },
+    "documentaryCreditApplicantAgentBank": {
+      "id": "did:web:globaltradebank.example.com",
+      "name": "Global Trade Finance Bank",
+      "type": "Party",
+      "postalAddress": {
+        "type": "Address",
+        "addressCountry": "US"
+      }
+    },
+    "documentaryCreditAvailableBank": {
+      "id": "did:web:pacifictradebank.example.com",
+      "name": "Pacific Trade Bank Ltd",
+      "type": "Party",
+      "postalAddress": {
+        "type": "Address",
+        "addressCountry": "AU"
+      }
+    },
+    "documentaryCreditBeneficiary": {
+      "id": "did:web:surfproexports.example.com",
+      "name": "SurfPro Exports Pty Ltd",
+      "type": "Party",
+      "postalAddress": {
+        "type": "Address",
+        "streetAddress": "12 Harbour Drive",
+        "addressLocality": "Sydney",
+        "addressRegion": "NSW",
+        "postalCode": "2000",
+        "addressCountry": "AU"
+      }
+    },
+    "documentaryCreditDrawee": {
+      "id": "did:web:globaltradebank.example.com",
+      "name": "Global Trade Finance Bank",
+      "type": "Party",
+      "postalAddress": {
+        "type": "Address",
+        "addressCountry": "US"
+      }
+    },
+    "documentaryCreditReimbursingBank": {
+      "id": "did:web:globalreimbursebank.example.com",
+      "name": "Global Reimbursement Bank",
+      "type": "Party",
+      "postalAddress": {
+        "type": "Address",
+        "addressCountry": "US"
+      }
+    },
+    "documentaryCreditAmount": {
+      "amount": 45000,
+      "currency": "USD"
+    },
+    "originalLoadingLocation": {
+      "name": "Port of Sydney",
+      "addressLocality": "Sydney",
+      "addressCountry": "AU",
+      "unLocode": "https://service.unece.org/trade/locode/au.htm#AUSYD"
+    },
+    "portOfDischarge": {
+      "name": "Port of Los Angeles",
+      "addressLocality": "Los Angeles",
+      "addressCountry": "US",
+      "unLocode": "https://service.unece.org/trade/locode/us.htm#USLAX"
+    },
+    "placeOfDelivery": {
+      "name": "Wave Rider Supplies Warehouse",
+      "addressLocality": "Williamsburg",
+      "addressRegion": "VA",
+      "addressCountry": "US"
+    },
+    "shipmentFrom": "Australia",
+    "descriptionOfGoods": "Surfboards, fins and wetsuits for water sports retail"
+  }
+}
